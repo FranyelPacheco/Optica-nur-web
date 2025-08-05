@@ -1,0 +1,284 @@
+/* =============== VARIABLES GLOBALES =============== */
+:root {
+  /* Colores (pendiente confirmación) */
+  --color-primario: #87CEEB;      /* Azul celeste */
+  --color-secundario: #FFFFFF;    /* Blanco */
+  --color-texto: #333333;         /* Gris oscuro */
+  --color-fondo: #F8F9FA;         /* Gris claro */
+  --color-bordes: #E0E0E0;        /* Gris medio */
+  
+  /* Tipografía */
+  --fuente-principal: 'Poppins', sans-serif;
+  
+  /* Espaciados */
+  --espaciado-xs: 0.5rem;
+  --espaciado-sm: 1rem;
+  --espaciado-md: 1.5rem;
+  --espaciado-lg: 2rem;
+  --espaciado-xl: 3rem;
+  
+  /* Sombras */
+  --sombra-suave: 0 2px 8px rgba(0,0,0,0.1);
+  --sombra-media: 0 4px 12px rgba(0,0,0,0.15);
+  
+  /* Bordes */
+  --radio-borde: 8px;
+  --grosor-borde: 1px;
+}
+
+/* =============== RESET Y ESTILOS BASE =============== */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--fuente-principal);
+  line-height: 1.6;
+  color: var(--color-texto);
+  background-color: var(--color-fondo);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* =============== COMPONENTES COMUNES =============== */
+/* HEADER */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--espaciado-sm) 5%;
+  background-color: var(--color-secundario);
+  box-shadow: var(--sombra-suave);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.logo {
+  height: 50px;
+  transition: transform 0.3s;
+}
+
+.logo:hover {
+  transform: scale(1.05);
+}
+
+/* MENÚ NAVEGACIÓN */
+.nav-menu ul {
+  display: flex;
+  gap: var(--espaciado-lg);
+  list-style: none;
+}
+
+.nav-menu a {
+  text-decoration: none;
+  color: var(--color-texto);
+  font-weight: 500;
+  font-size: 1.1rem;
+  position: relative;
+  padding: var(--espaciado-xs) 0;
+  transition: color 0.3s;
+}
+
+.nav-menu a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--color-primario);
+  transition: width 0.3s;
+}
+
+.nav-menu a:hover {
+  color: var(--color-primario);
+}
+
+.nav-menu a:hover::after {
+  width: 100%;
+}
+
+/* MENÚ MÓVIL (SÓLO ESTRUCTURA) */
+.menu-mobile {
+  display: none;
+  cursor: pointer;
+}
+
+.menu-mobile .bar {
+  display: block;
+  width: 25px;
+  height: 3px;
+  margin: 5px auto;
+  background-color: var(--color-texto);
+  transition: all 0.3s;
+}
+
+/* CONTENIDO PRINCIPAL */
+.main-content {
+  flex: 1;
+  padding: var(--espaciado-xl) 5%;
+}
+
+.contenido-pagina {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* FOOTER */
+.footer {
+  background-color: var(--color-primario);
+  color: var(--color-secundario);
+  padding: var(--espaciado-md);
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: var(--espaciado-md);
+  margin-top: var(--espaciado-sm);
+}
+
+.social-icon {
+  width: 32px;
+  height: 32px;
+  transition: transform 0.3s;
+}
+
+.social-icon:hover {
+  transform: translateY(-3px);
+}
+
+/* =============== COMPONENTES REUTILIZABLES =============== */
+/* BOTONES */
+.btn {
+  display: inline-block;
+  padding: var(--espaciado-sm) var(--espaciado-md);
+  background-color: var(--color-primario);
+  color: var(--color-secundario);
+  border-radius: var(--radio-borde);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s;
+  text-align: center;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--sombra-media);
+}
+
+/* TARJETAS */
+.tarjeta {
+  background: var(--color-secundario);
+  border-radius: var(--radio-borde);
+  padding: var(--espaciado-md);
+  box-shadow: var(--sombra-suave);
+  border: var(--grosor-borde) solid var(--color-bordes);
+  transition: all 0.3s;
+}
+
+.tarjeta:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--sombra-media);
+}
+
+/* TIPOGRAFÍA UNIFICADA */
+.titulo-principal {
+  font-size: 2.5rem;
+  margin-bottom: var(--espaciado-md);
+  font-weight: 700;
+  text-align: center;
+  color: var(--color-primario);
+}
+
+h2 {
+  font-size: 2rem;
+  margin-bottom: var(--espaciado-md);
+  font-weight: 600;
+  position: relative;
+  padding-bottom: var(--espaciado-xs);
+}
+
+h2::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 60px;
+  height: 3px;
+  background-color: var(--color-primario);
+}
+
+p {
+  margin-bottom: var(--espaciado-sm);
+  font-size: 1.1rem;
+  line-height: 1.7;
+}
+
+/* =============== RESPONSIVIDAD COMÚN =============== */
+@media (max-width: 992px) {
+  .titulo-principal {
+    font-size: 2.2rem;
+  }
+  
+  h2 {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 768px) {
+  /* Menú móvil */
+  .nav-menu {
+    display: none;
+  }
+  
+  .menu-mobile {
+    display: block;
+  }
+  
+  /* Ajustes tipografía */
+  .titulo-principal {
+    font-size: 2rem;
+  }
+  
+  h2 {
+    font-size: 1.6rem;
+  }
+  
+  .main-content {
+    padding: var(--espaciado-lg) var(--espaciado-sm);
+  }
+}
+
+@media (max-width: 480px) {
+  .titulo-principal {
+    font-size: 1.75rem;
+  }
+  
+  h2 {
+    font-size: 1.4rem;
+  }
+  
+  .logo {
+    height: 40px;
+  }
+}
