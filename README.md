@@ -154,9 +154,9 @@ Optica-nur-web/
 | Página | Responsable | Estado |  
 |--------|------------|--------|  
 | Inicio | Javier Nieto | 🟡 En progreso |  
-| Contacto | Franyel Pacheco | 🟡 En progreso |  
+| Contacto | Sebastián Valera | 🟡 En progreso |  
 | Catálogo | Virginia Alvarado | 🟡 En progreso |  
-| Ubicación | Sebastián Valera | 🟡 En progreso |  
+| Ubicación | Franyel Pacheco | 🟡 En progreso |  
 | FAQs | Santiago Briceño | 🟡 En progreso |  
 
 > ⚠️ **Importante**: Todos los cambios a `global.css` deben ser aprobados por 2 miembros del equipo.
