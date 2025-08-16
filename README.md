@@ -24,7 +24,7 @@ Cada uno debe trabajar en su propia rama con el nombre de su página:
 git checkout -b feature/nombre-de-tu-pagina
 ```
 **Ejemplo**:  
-- `feature/contacto` (Caso de Franyel)  
+- `feature/ubicacion` (Caso de Franyel)  
 
 #### **3️⃣ Editar los archivos asignados**  
 - Modifica **solo** tu archivo HTML en `/pages` y tu CSS en `/assets/css`.  
