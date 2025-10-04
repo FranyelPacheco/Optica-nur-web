@@ -1,31 +1,58 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Óptica Nur - Ubicación</title>
-  
+
   <!-- CSS GLOBAL -->
-  <link rel="stylesheet" href="../assets/css/global.css">
-  
-  <!-- CSS ESPECÍFICO (cambiar por el nombre de tu página) -->
-  <link rel="stylesheet" href="../assets/css/ubicacion.css">
-  
+  <link rel="stylesheet" href="../assets/css/global.css" />
+
+  <!-- CSS ESPECÍFICO -->
+  <link rel="stylesheet" href="../assets/css/contacto.css" />
+
   <!-- FUENTE POPPINS Y FAVICON -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="icon" href="../assets/img/logo-arriba.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="">
+
+  <!-- SEO / Social -->
+  <meta name="description" content="Encuentra las sedes de Óptica Nur en Barquisimeto: direcciones, horarios, teléfonos, y mapas para llegar fácilmente." />
+  <meta property="og:title" content="Óptica Nur — Ubicación" />
+  <meta property="og:description" content="Encuentra las sedes de Óptica Nur en Barquisimeto: direcciones, horarios, teléfonos, y mapas para llegar fácilmente." />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="es_VE" />
+
+  <!-- JSON-LD (ajusta con datos reales) -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Optician",
+    "name":"Óptica Nur",
+    "url":"https://tudominio.com",
+    "telephone":"+58-251-XXX-XXXX",
+    "address":{
+      "@type":"PostalAddress",
+      "streetAddress":"TODO: Direcciones (ver secciones)",
+      "addressLocality":"Barquisimeto",
+      "addressRegion":"Lara",
+      "addressCountry":"VE"
+    }
+  }
+  </script>
+
+  <!-- GOOGLE MAPS API (opcional) -->
+  <!-- Reemplaza TU_API_KEY; si no tienes, no es obligatorio: hay fallback a iframe. -->
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBXoCGvEF-vls9968KA6MNx3rocsjWRV1g&callback=initMap" async defer></script>
 </head>
 
 <body>
   <!-- HEADER (COMÚN) -->
-  <header class="header">
+  <header class="header" role="banner">
     <div class="logo-container">
       <a href="index.html"><img src="../assets/img/logo-placeholder.svg" alt="Óptica Nur" class="logo" /></a>
     </div>
-    
-    <!-- MENÚ NAVEGACIÓN (ESCRITORIO) -->
-    <nav class="nav-menu">
+
+    <nav class="nav-menu" aria-label="Navegación principal">
       <ul>
         <li><a href="index.html">Inicio</a></li>
         <li><a href="catalogo.html">Catálogo</a></li>
@@ -33,43 +60,231 @@
         <li><a href="faqs.html">Preguntas Frecuentes</a></li>
       </ul>
     </nav>
-    
-    <!-- MENÚ HAMBURGUESA (MÓVIL - POR IMPLEMENTAR) -->
-    <div class="menu-mobile">
+
+    <button class="menu-mobile" aria-label="Abrir menú" aria-expanded="false" aria-controls="menu-movil">
       <span class="bar"></span>
       <span class="bar"></span>
       <span class="bar"></span>
-    </div>
+    </button>
   </header>
 
-  <!-- CONTENIDO PRINCIPAL (CADA UNO TRABAJA AQUÍ) -->
-  <main class="main-content">
-    <section class="contenido-pagina">
-      <!-- 
-        *************************************
-        ZONA DE TRABAJO INDIVIDUAL 
-        (Reemplazar esto con tu contenido)
-        *************************************
-      -->
-      <h1 class="titulo-principal">Título de la Página</h1>
-      <p>Contenido específico aquí...</p>
-      
+  <!-- CONTENIDO PRINCIPAL -->
+  <main class="main-content" id="main" role="main">
+    <section class="contenido-pagina" aria-labelledby="main-title">
+      <h1 id="main-title" class="titulo-principal">Nuestras Sedes</h1>
+      <p class="subtitulo">Encuéntranos fácilmente en Barquisimeto</p>
+
+      <!-- Sede: Centro -->
+      <article class="seccion seccion-sede" id="sede-centro" aria-labelledby="sede-centro-title">
+        <h2 id="sede-centro-title" class="titulo-seccion">Sede Centro</h2>
+
+        <div class="ubi-grid">
+          <!-- Datos -->
+          <div class="card info-card">
+            <div class="detalle-sede">
+              <div class="icono-sede" aria-hidden="true">📍</div>
+              <div>
+                <h3>Dirección</h3>
+                <p>Carrera 18 Esquina Calle 23, Torre Financiera del Centro, Piso 4, Barquisimeto</p>
+              </div>
+            </div>
+
+            <div class="detalle-sede">
+              <div class="icono-sede" aria-hidden="true">🕒</div>
+              <div>
+                <h3>Horarios</h3>
+                <p>Lunes a Viernes: 8:00 AM - 6:00 PM</p>
+                <p>Sábados: 9:00 AM - 2:00 PM</p>
+              </div>
+            </div>
+
+            <div class="detalle-sede">
+              <div class="icono-sede" aria-hidden="true">📞</div>
+              <div>
+                <h3>Teléfono</h3>
+                <p><a href="tel:+582511234567">+58 251 123 4567</a></p>
+              </div>
+            </div>
+
+            <div class="referencias">
+              <h3>Referencias</h3>
+              <p>Frente al Centro Comercial Las Trinitarias, al lado del Banco de Venezuela</p>
+            </div>
+
+            <div class="contacto-acciones">
+              <a class="btn" href="https://www.google.com/maps/search/?api=1&query=10.0725,-69.3260" target="_blank" rel="noopener">Google Maps</a>
+              <a class="btn outline" href="https://waze.com/ul?ll=10.0725%2C-69.3260&navigate=yes" target="_blank" rel="noopener">Waze</a>
+              <a class="btn outline" href="https://wa.me/582511234567" target="_blank" rel="noopener">WhatsApp</a>
+            </div>
+          </div>
+
+          <!-- Mapa -->
+          <aside class="card card-mapa" aria-label="Mapa de la sede centro">
+            <div class="mapa-container">
+              <!-- Map JS target -->
+              <div id="mapa-centro" class="mapa" role="img" aria-label="Mapa de la sede centro"></div>
+            </div>
+            <p class="mapa-nota">Cerca de <strong>Centro Comercial Las Trinitarias</strong>.</p>
+          </aside>
+        </div>
+      </article>
+
+      <!-- Sede: Este -->
+      <article class="seccion seccion-sede sede-este" id="sede-este" aria-labelledby="sede-este-title">
+        <h2 id="sede-este-title" class="titulo-seccion">Sede Este</h2>
+
+        <div class="ubi-grid">
+          <!-- Datos -->
+          <div class="card info-card">
+            <div class="detalle-sede">
+              <div class="icono-sede" aria-hidden="true">📍</div>
+              <div>
+                <h3>Dirección</h3>
+                <p>Av. Venezuela entre Av Los Leones y Av. Argimiro Bracamonte, Torre Financiera de Lara, Piso 2 (Torre Sur)</p>
+              </div>
+            </div>
+
+            <div class="detalle-sede">
+              <div class="icono-sede" aria-hidden="true">🕒</div>
+              <div>
+                <h3>Horarios</h3>
+                <p>Lunes a Viernes: 8:30 AM - 6:30 PM</p>
+                <p>Sábados: 9:00 AM - 1:00 PM</p>
+              </div>
+            </div>
+
+            <div class="detalle-sede">
+              <div class="icono-sede" aria-hidden="true">📞</div>
+              <div>
+                <h3>Teléfono</h3>
+                <p><a href="tel:+582519876543">+58 251 987 6543</a></p>
+              </div>
+            </div>
+
+            <div class="referencias">
+              <h3>Referencias</h3>
+              <p>Diagonal al CC Sambil, en la Torre Financiera de Lara</p>
+            </div>
+
+            <div class="contacto-acciones">
+              <a class="btn" href="https://www.google.com/maps/search/?api=1&query=10.0800,-69.3000" target="_blank" rel="noopener">Google Maps</a>
+              <a class="btn outline" href="https://waze.com/ul?ll=10.0800%2C-69.3000&navigate=yes" target="_blank" rel="noopener">Waze</a>
+              <a class="btn outline" href="https://wa.me/582519876543" target="_blank" rel="noopener">WhatsApp</a>
+            </div>
+          </div>
+
+          <!-- Mapa -->
+          <aside class="card card-mapa" aria-label="Mapa de la sede este">
+            <div class="mapa-container">
+              <div id="mapa-este" class="mapa" role="img" aria-label="Mapa de la sede este"></div>
+            </div>
+            <p class="mapa-nota">Cerca de <strong>CC Sambil</strong>.</p>
+          </aside>
+        </div>
+      </article>
+
+      <!-- Sección transporte -->
+      <section class="seccion seccion-transporte" aria-labelledby="transporte-title">
+        <h2 id="transporte-title" class="titulo-seccion">Cómo Llegar</h2>
+
+        <div class="contenedor-transporte">
+          <div class="opcion-transporte">
+            <div class="icono-transporte" aria-hidden="true">🚗</div>
+            <h3>En automóvil</h3>
+            <p>Ambas sedes cuentan con estacionamiento privado gratuito para clientes.</p>
+          </div>
+
+          <div class="opcion-transporte">
+            <div class="icono-transporte" aria-hidden="true">🚌</div>
+            <h3>Transporte público</h3>
+            <p><strong>Sede Centro:</strong> Rutas 01, 05 y 12<br><strong>Sede Este:</strong> Rutas 08, 15 y 20</p>
+          </div>
+
+          <div class="opcion-transporte">
+            <div class="icono-transporte" aria-hidden="true">🅿️</div>
+            <h3>Paradas cercanas</h3>
+            <p><strong>Sede Centro:</strong> "Las Trinitarias" (100 m)<br><strong>Sede Este:</strong> "Torre Financiera" (50 m)</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Galería (opcional) -->
+      <section class="galeria" aria-labelledby="galeria-title">
+        <h2 id="galeria-title" class="titulo-seccion">Conoce nuestras sedes</h2>
+        <div class="galeria-grid">
+          <img loading="lazy" src="../assets/img/sedes/local-1.jpg" alt="Fachada Óptica Nur - Centro">
+          <img loading="lazy" src="../assets/img/sedes/interior-1.jpg" alt="Interior Óptica Nur - Exhibición">
+          <img loading="lazy" src="../assets/img/sedes/interior-2.jpg" alt="Área de atención al cliente">
+        </div>
+      </section>
     </section>
   </main>
 
   <!-- FOOTER (COMÚN) -->
-  <footer class="footer">
+  <footer class="footer" role="contentinfo">
     <div class="footer-content">
-      <p>© 2025 Óptica Nur - Barquisimeto, Venezuela</p>
+      <p>© <span id="year"></span> Óptica Nur - Barquisimeto, Venezuela</p>
       <div class="social-links">
-        <a href="#" aria-label="Facebook">
-          <img src="../assets/img/icons/facebook.svg" alt="Facebook" class="social-icon">
-        </a>
-        <a href="#" aria-label="Instagram">
-          <img src="../assets/img/icons/instagram.svg" alt="Instagram" class="social-icon">
-        </a>
+        <a href="#" aria-label="Facebook"><img src="../assets/img/icons/facebook.svg" alt="" class="social-icon"></a>
+        <a href="#" aria-label="Instagram"><img src="../assets/img/icons/instagram.svg" alt="" class="social-icon"></a>
       </div>
     </div>
   </footer>
+
+  <!-- SCRIPTS -->
+  <script>
+    // Año dinámico
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Menú hamburguesa funcional
+    document.addEventListener("DOMContentLoaded", () => {
+      const menuBtn = document.querySelector('.menu-mobile');
+      const navMenu = document.querySelector('.nav-menu');
+      menuBtn.addEventListener('click', () => {
+        const expanded = menuBtn.getAttribute('aria-expanded') === 'true';
+        menuBtn.setAttribute('aria-expanded', String(!expanded));
+        navMenu.classList.toggle('active');
+        menuBtn.classList.toggle('active');
+      });
+    });
+
+    // Inicializar mapas con Google Maps JS API
+    function initMap() {
+      try {
+        // Centro
+        const centroCoords = { lat: 10.0725, lng: -69.3260 }; // TODO: ajustar
+        const mapaCentro = new google.maps.Map(document.getElementById('mapa-centro'), {
+          zoom: 16, center: centroCoords, mapTypeId: 'roadmap', styles: [{ featureType: 'poi', stylers: [{ visibility: 'off' }] }]
+        });
+        new google.maps.Marker({ position: centroCoords, map: mapaCentro, title: 'Óptica Nur - Sede Centro', icon: "../assets/img/icons/marker-optica.png" });
+
+        // Este
+        const esteCoords = { lat: 10.0800, lng: -69.3000 }; // TODO: ajustar
+        const mapaEste = new google.maps.Map(document.getElementById('mapa-este'), {
+          zoom: 16, center: esteCoords, mapTypeId: 'roadmap', styles: [{ featureType: 'poi', stylers: [{ visibility: 'off' }] }]
+        });
+        new google.maps.Marker({ position: esteCoords, map: mapaEste, title: 'Óptica Nur - Sede Este', icon: "../assets/img/icons/marker-optica.png" });
+      } catch (err) {
+        // Si algo falla, el fallback después pintará un mensaje
+        console.warn('initMap error', err);
+      }
+    }
+
+    // Fallback: si Google Maps no carga en 3s, mostrar mensaje y añadir iframe como alternativa.
+    setTimeout(() => {
+      if (typeof google === 'undefined' || !document.getElementById('mapa-centro').innerHTML.trim()) {
+        const mapas = [
+          { id: 'mapa-centro', q: '10.0725,-69.3260' },
+          { id: 'mapa-este', q: '10.0800,-69.3000' }
+        ];
+        mapas.forEach(m => {
+          const container = document.getElementById(m.id);
+          if (container) {
+            container.innerHTML = `<iframe title="Mapa alternativa" loading="lazy" src="https://www.google.com/maps?q=${m.q}&hl=es&z=15&output=embed" style="border:0;width:100%;height:100%"></iframe>`;
+          }
+        });
+      }
+    }, 3000);
+  </script>
 </body>
 </html>
