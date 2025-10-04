@@ -74,7 +74,6 @@ Optica-nur-web/
 │   ├── index.html               # Página principal
 │   ├── contacto.html            # Contacto
 │   ├── catalogo.html            # Catálogo
-│   ├── ubicacion.html           # Ubicación
 │   └── faqs.html                # Preguntas frecuentes
 │
 ├── .gitignore
