@@ -17,6 +17,9 @@
 </head>
 
 <body>
+  <!-- Overlay para menú móvil -->
+  <div class="menu-overlay" id="menuOverlay"></div>
+
   <!-- HEADER (COMÚN) -->
   <header class="header">
     <div class="logo-container">
@@ -24,21 +27,21 @@
     </div>
     
     <!-- MENÚ NAVEGACIÓN (ESCRITORIO) -->
-    <nav class="nav-menu">
+    <nav class="nav-menu" id="navMenu">
       <ul>
-        <li><a href="index.html">Inicio</a></li>
+        <li><a href="index.html" class="activo">Inicio</a></li>
         <li><a href="catalogo.html">Catálogo</a></li>
         <li><a href="contacto.html">Contacto</a></li>
         <li><a href="faqs.html">Preguntas Frecuentes</a></li>
       </ul>
     </nav>
     
-    <!-- MENÚ HAMBURGUESA (MÓVIL - POR IMPLEMENTAR) -->
-    <div class="menu-mobile">
+    <!-- MENÚ HAMBURGUESA (MÓVIL) -->
+    <button class="menu-mobile" aria-label="Abrir menú" aria-expanded="false" aria-controls="navMenu" id="menuMobile">
       <span class="bar"></span>
       <span class="bar"></span>
       <span class="bar"></span>
-    </div>
+    </button>
   </header>
 
   <!-- CONTENIDO PRINCIPAL (CADA UNO TRABAJA AQUÍ) -->
@@ -59,16 +62,82 @@
   <!-- FOOTER (COMÚN) -->
   <footer class="footer">
     <div class="footer-content">
-      <p>© 2025 Óptica Nur - Barquisimeto, Venezuela</p>
+      <p>© <span id="year">2025</span> Óptica Nur - Barquisimeto, Venezuela</p>
       <div class="social-links">
-        <a href="#" aria-label="Facebook">
+        <a href="https://www.facebook.com/opticanurbarquisimeto/?locale=es_LA" aria-label="Facebook">
           <img src="../assets/img/icons/facebook.svg" alt="Facebook" class="social-icon">
         </a>
-        <a href="#" aria-label="Instagram">
+        <a href="https://www.instagram.com/optica.nur/?hl=es" aria-label="Instagram">
           <img src="../assets/img/icons/instagram.svg" alt="Instagram" class="social-icon">
         </a>
       </div>
     </div>
   </footer>
+
+  <!-- SCRIPT -->
+  <script>
+  // Año dinámico
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // Menú hamburguesa mejorado - Solo se activa en móvil
+  document.addEventListener("DOMContentLoaded", () => {
+    const menuBtn = document.getElementById('menuMobile');
+    const navMenu = document.getElementById('navMenu');
+    const menuOverlay = document.getElementById('menuOverlay');
+    const body = document.body;
+
+    // Verificar si estamos en móvil
+    function isMobile() {
+      return window.innerWidth <= 768;
+    }
+
+    function toggleMenu() {
+      if (!isMobile()) return;
+      
+      const expanded = menuBtn.getAttribute('aria-expanded') === 'true';
+      menuBtn.setAttribute('aria-expanded', String(!expanded));
+      menuBtn.classList.toggle('active');
+      navMenu.classList.toggle('active');
+      menuOverlay.classList.toggle('active');
+      body.style.overflow = expanded ? 'auto' : 'hidden';
+    }
+
+    function closeMenu() {
+      if (!isMobile()) return;
+      
+      menuBtn.setAttribute('aria-expanded', 'false');
+      menuBtn.classList.remove('active');
+      navMenu.classList.remove('active');
+      menuOverlay.classList.remove('active');
+      body.style.overflow = 'auto';
+    }
+
+    // Solo agregar eventos si el elemento existe y estamos en móvil
+    if (menuBtn && navMenu && menuOverlay) {
+      menuBtn.addEventListener('click', toggleMenu);
+      menuOverlay.addEventListener('click', closeMenu);
+
+      // Cerrar menú al hacer clic en un enlace
+      const navLinks = navMenu.querySelectorAll('a');
+      navLinks.forEach(link => {
+        link.addEventListener('click', closeMenu);
+      });
+
+      // Cerrar menú con tecla Escape
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && navMenu.classList.contains('active')) {
+          closeMenu();
+        }
+      });
+
+      // Cerrar menú al redimensionar a escritorio
+      window.addEventListener('resize', () => {
+        if (!isMobile() && navMenu.classList.contains('active')) {
+          closeMenu();
+        }
+      });
+    }
+  });
+</script>
 </body>
 </html>
