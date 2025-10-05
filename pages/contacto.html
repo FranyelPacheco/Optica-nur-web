@@ -46,13 +46,16 @@
 </head>
 
 <body>
+  <!-- Overlay para menú móvil -->
+  <div class="menu-overlay" id="menuOverlay"></div>
+
   <!-- HEADER (COMÚN) -->
   <header class="header" role="banner">
     <div class="logo-container">
       <a href="index.html"><img src="../assets/img/logo-placeholder.svg" alt="Óptica Nur" class="logo" /></a>
     </div>
 
-    <nav class="nav-menu" aria-label="Navegación principal">
+    <nav class="nav-menu" aria-label="Navegación principal" id="navMenu">
       <ul>
         <li><a href="index.html">Inicio</a></li>
         <li><a href="catalogo.html">Catálogo</a></li>
@@ -61,7 +64,7 @@
       </ul>
     </nav>
 
-    <button class="menu-mobile" aria-label="Abrir menú" aria-expanded="false" aria-controls="menu-movil">
+    <button class="menu-mobile" aria-label="Abrir menú" aria-expanded="false" aria-controls="navMenu" id="menuMobile">
       <span class="bar"></span>
       <span class="bar"></span>
       <span class="bar"></span>
@@ -254,16 +257,64 @@
     // Año dinámico
     document.getElementById('year').textContent = new Date().getFullYear();
 
-    // Menú hamburguesa funcional
+    // Menú hamburguesa mejorado - Solo se activa en móvil
     document.addEventListener("DOMContentLoaded", () => {
-      const menuBtn = document.querySelector('.menu-mobile');
-      const navMenu = document.querySelector('.nav-menu');
-      menuBtn.addEventListener('click', () => {
+      const menuBtn = document.getElementById('menuMobile');
+      const navMenu = document.getElementById('navMenu');
+      const menuOverlay = document.getElementById('menuOverlay');
+      const body = document.body;
+
+      // Verificar si estamos en móvil
+      function isMobile() {
+        return window.innerWidth <= 768;
+      }
+
+      function toggleMenu() {
+        if (!isMobile()) return;
+        
         const expanded = menuBtn.getAttribute('aria-expanded') === 'true';
         menuBtn.setAttribute('aria-expanded', String(!expanded));
-        navMenu.classList.toggle('active');
         menuBtn.classList.toggle('active');
-      });
+        navMenu.classList.toggle('active');
+        menuOverlay.classList.toggle('active');
+        body.style.overflow = expanded ? 'auto' : 'hidden';
+      }
+
+      function closeMenu() {
+        if (!isMobile()) return;
+        
+        menuBtn.setAttribute('aria-expanded', 'false');
+        menuBtn.classList.remove('active');
+        navMenu.classList.remove('active');
+        menuOverlay.classList.remove('active');
+        body.style.overflow = 'auto';
+      }
+
+      // Solo agregar eventos si el elemento existe y estamos en móvil
+      if (menuBtn && navMenu && menuOverlay) {
+        menuBtn.addEventListener('click', toggleMenu);
+        menuOverlay.addEventListener('click', closeMenu);
+
+        // Cerrar menú al hacer clic en un enlace
+        const navLinks = navMenu.querySelectorAll('a');
+        navLinks.forEach(link => {
+          link.addEventListener('click', closeMenu);
+        });
+
+        // Cerrar menú con tecla Escape
+        document.addEventListener('keydown', (e) => {
+          if (e.key === 'Escape' && navMenu.classList.contains('active')) {
+            closeMenu();
+          }
+        });
+
+        // Cerrar menú al redimensionar a escritorio
+        window.addEventListener('resize', () => {
+          if (!isMobile() && navMenu.classList.contains('active')) {
+            closeMenu();
+          }
+        });
+      }
     });
   </script>
 </body>
