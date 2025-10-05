@@ -24,7 +24,7 @@ Cada uno debe trabajar en su propia rama con el nombre de su página:
 git checkout -b feature/nombre-de-tu-pagina
 ```
 **Ejemplo**:  
-- `feature/ubicacion` (Caso de Franyel)  
+- `feature/contacto` (Caso de Franyel/Sebastian)  
 
 #### **3️⃣ Editar los archivos asignados**  
 - Modifica **solo** tu archivo HTML en `/pages` y tu CSS en `/assets/css`.  
@@ -74,7 +74,6 @@ Optica-nur-web/
 │   ├── index.html               # Página principal
 │   ├── contacto.html            # Contacto
 │   ├── catalogo.html            # Catálogo
-│   ├── ubicacion.html           # Ubicación
 │   └── faqs.html                # Preguntas frecuentes
 │
 ├── .gitignore
@@ -154,9 +153,8 @@ Optica-nur-web/
 | Página | Responsable | Estado |  
 |--------|------------|--------|  
 | Inicio | Javier Nieto | 🟡 En progreso |  
-| Contacto | Sebastián Valera | 🟡 En progreso |  
-| Catálogo | Virginia Alvarado | 🟡 En progreso |  
-| Ubicación | Franyel Pacheco | 🟡 En progreso |  
+| Contacto | Franyel Pacheco & Sebastián Valera | 🟡 En progreso |  
+| Catálogo | Virginia Alvarado | 🟡 En progreso |   
 | FAQs | Santiago Briceño | 🟡 En progreso |  
 
 > ⚠️ **Importante**: Todos los cambios a `global.css` deben ser aprobados por 2 miembros del equipo.
