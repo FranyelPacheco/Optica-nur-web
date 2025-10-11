@@ -79,7 +79,7 @@
   border-radius: var(--radio-borde);
   background: var(--color-secundario);
   box-shadow: var(--sombra-suave);
-  overflow: hidden; /* Esto es importante */
+  overflow: hidden;
 }
 .mapa-container {
   overflow: hidden;
@@ -87,7 +87,6 @@
   background: #f6f6f6;
   flex: 1;
   position: relative;
-  /* Quitamos border-radius y border del contenedor */
   border: none;
   border-radius: 0;
 }
@@ -98,16 +97,11 @@
   width: 100%;
   height: 100%;
   border: none;
+  /* Añade estas propiedades para móviles */
+  min-height: 300px;
+  -webkit-overflow-scrolling: touch;
 }
-.mapa-nota {
-  text-align: center;
-  padding: 0.8rem;
-  margin: 0;
-  font-size: 0.9rem;
-  color: #666;
-  border-top: var(--grosor-borde) solid var(--color-bordes);
-  background: var(--color-secundario);
-}
+
 
 
 /* Transporte */
@@ -149,6 +143,14 @@
 .titulo-seccion { font-size: 1.6rem; margin-bottom: var(--espaciado-md); color: var(--color-texto); }
 .subtitulo { text-align: center; margin-top: .4rem; color: #666; }
 
+.boton_manual_usuario{
+  width: 75%;
+  display: block;
+  margin: auto;
+}
+
+
+
 /* Asegurar que la grid ocupe altura completa en desktop */
 @media (min-width: 992px) {
   .ubi-grid { 
@@ -163,9 +165,22 @@
   }
 }
 
-/* Media queries móviles */
+
+/* Media queries móviles - ACTUALIZADO */
 @media (max-width: 768px) {
-  .mapa-container { height: 300px; }
+  .mapa-container { 
+    height: 300px; 
+    /* Fuerza el redimensionamiento en móviles */
+    min-height: 300px;
+  }
+  .mapa-container iframe {
+    /* Propiedades específicas para móviles */
+    height: 300px;
+    min-height: 300px;
+    width: 100%;
+    /* Mejora la interacción táctil */
+    touch-action: pan-x pan-y;
+  }
   .galeria-grid img { height: 160px; }
   .titulo-principal { font-size: 1.9rem; }
 }
@@ -175,4 +190,4 @@ a:focus, button:focus { outline: 3px solid rgba(242,203,5,0.2); outline-offset: 
 
 /* Menu activo */
 .nav-menu a.activo, .nav-menu a.activo:hover { color: var(--color-primario); }
-.nav-menu a.activo::after { width: 100%; }
+.nav-menu a.activo::after { width: 100%;}
