@@ -268,7 +268,9 @@ p {
   visibility: visible;
 }
 
-/* =============== RESPONSIVE DESIGN =============== */
+
+
+/* =============== DISEÑO RESPONSIVE  ============== */
 
 /* TABLETS (768px - 991px) */
 @media (max-width: 991px) {
@@ -491,13 +493,3 @@ p {
   }
 }
 
-/* IMPRESIÓN */
-@media print {
-  .header, .footer, .menu-mobile, .btn-manual-usuario {
-    display: none;
-  }
-  
-  .main-content {
-    padding: 0;
-  }
-}
