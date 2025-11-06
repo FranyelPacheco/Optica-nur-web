@@ -22,27 +22,6 @@
   <meta property="og:type" content="website" />
   <meta property="og:locale" content="es_VE" />
 
-  <!-- JSON-LD -->
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"Optician",
-    "name":"Óptica Nur",
-    "url":"https://tudominio.com",
-    "telephone":"+58-426-856-1256",
-    "address":{
-      "@type":"PostalAddress",
-      "streetAddress":"Av. Venezuela con Av. Argimiro Bracamonte, Torre Financiera, Piso 2",
-      "addressLocality":"Barquisimeto",
-      "addressRegion":"Lara",
-      "addressCountry":"VE"
-    },
-    "hasMap":[
-      "https://maps.app.goo.gl/WxXuZ8t4MudQ2b5W6",
-      "https://maps.app.goo.gl/9GqaPMRXH6drHZCv8"
-    ]
-  }
-  </script>
 </head>
 
 <body>
@@ -60,7 +39,6 @@
         <li><a href="index.html">Inicio</a></li>
         <li><a href="catalogo.html">Catálogo</a></li>
         <li><a href="contacto.html" class="activo">Contacto</a></li>
-        <li><a href="faqs.html">Preguntas Frecuentes</a></li>
       </ul>
     </nav>
 
@@ -116,8 +94,10 @@
             </div>
 
             <div class="contacto-acciones">
-              <a class="btn" href="https://maps.app.goo.gl/WxXuZ8t4MudQ2b5W6" target="_blank" rel="noopener">Google Maps</a>
-              <a class="btn outline" href="https://wa.me/584268561256" target="_blank" rel="noopener">WhatsApp</a>
+              
+              <button class="btn"><a href="https://maps.app.goo.gl/WxXuZ8t4MudQ2b5W6" target="_blank" rel="noopener">Google Maps</a></button>
+              
+              <button class="btn"><a href="https://wa.me/584268561256" target="_blank" rel="noopener">WhatsApp </a></button>
             </div>
           </div>
 
@@ -180,8 +160,10 @@
             </div>
 
             <div class="contacto-acciones">
-              <a class="btn" href="https://maps.app.goo.gl/9GqaPMRXH6drHZCv8" target="_blank" rel="noopener">Google Maps</a>
-              <a class="btn outline" href="https://wa.me/584268561256" target="_blank" rel="noopener">WhatsApp</a>
+              <button class="btn"><a href="https://maps.app.goo.gl/9GqaPMRXH6drHZCv8" target="_blank" rel="noopener">Google Maps</a></button>
+              
+              <button class="btn"><a href="https://wa.me/584268561256" target="_blank" rel="noopener">WhatsApp </a></button>
+              
             </div>
           </div>
 
@@ -222,7 +204,7 @@
             <h3>Transporte</h3>
             <hr>
             <br>
-            <p><strong>Sede Centro:</strong> Rutas 05 y 06<br><strong>Sede Este:</strong> Buses con ruta de ida o vuelta a Yaritagua.</p>
+            <p><strong>Sede Centro:</strong> Rutas 05 y 06<br><strong>Sede Este:</strong> Ruta A (algunos)</p>
           </div>
 
           <div class="opcion-transporte">
@@ -230,18 +212,18 @@
             <h3>Paradas cercanas</h3>
             <hr>
             <br>
-            <p><strong>Sede Centro:</strong> "Hotel Príncipe" (15 m)<br><strong>Sede Este:</strong> "Torre Financiera" (50 m)</p>
+            <p><strong>Sede Centro:</strong> "Hotel Príncipe" (15m)<br><strong>Sede Este:</strong> "Torre Financiera" (50m)</p>
           </div>
         </div>
       </section>
 
-      <!-- Galería (opcional) -->
+      <!-- Galería -->
       <section class="galeria" aria-labelledby="galeria-title">
         <h2 id="galeria-title" class="titulo-seccion">Conoce nuestras sedes</h2>
         <div class="galeria-grid">
-          <img loading="lazy" src="../assets/img/sedes/local-1.jpg" alt="Fachada Óptica Nur - Centro">
-          <img loading="lazy" src="../assets/img/sedes/interior-1.jpg" alt="Interior Óptica Nur - Exhibición">
-          <img loading="lazy" src="../assets/img/sedes/interior-2.jpg" alt="Área de atención al cliente">
+          <img loading="lazy" src="../assets/img/sedes/local-1.png" alt="Fachada Óptica Nur - Centro">
+          <img loading="lazy" src="../assets/img/sedes/local-2.jfif" alt="Interior Óptica Nur - Exhibición">
+          <img loading="lazy" src="../assets/img/sedes/fachada-este.jpg" alt="Área de atención al cliente">
         </div>
       </section>
     </section>
@@ -259,8 +241,8 @@
   </footer>
 
   <!-- BOTÓN MANUAL DE USUARIO -->
-  <button class="btn-manual-usuario" onclick="abrirManual()" aria-label="Abrir manual de usuario">
-    <span><img src="../assets/img/icons/manual_de_usuario.png" alt="" class="boton_manual_usuario"></span>
+  <button class="btn-manual-usuario" aria-label="Abrir manual de usuario">
+    <span> <a href="manual-usuario.html" target="_blank"><img src="../assets/img/icons/manual_de_usuario.png" alt="" class="boton_manual_usuario"></a></span>
     <span class="tooltip">Manual de Usuario</span>
   </button>
 
@@ -268,11 +250,6 @@
   <script>
     // Año dinámico
     document.getElementById('year').textContent = new Date().getFullYear();
-
-    // Función para abrir el manual
-    function abrirManual() {
-      window.open('manual-usuario.html', '_blank', 'width=1000,height=700,scrollbars=yes');
-    }
 
     // Menú hamburguesa mejorado - Solo se activa en móvil
     document.addEventListener("DOMContentLoaded", () => {

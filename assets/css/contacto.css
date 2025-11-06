@@ -62,6 +62,11 @@
   transition: transform .12s ease, filter .15s ease;
   text-decoration: none;
 }
+
+.btn a {
+  color: var(--color-secundario);
+  text-decoration: none;
+}
 .btn:hover { transform: translateY(-2px); filter: brightness(1.02); }
 .btn.outline { background: transparent; color: var(--color-texto); border-color: var(--color-bordes); }
 

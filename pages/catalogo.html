@@ -1,74 +1,358 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Óptica Nur - Catálogo</title>
-  
+
   <!-- CSS GLOBAL -->
-  <link rel="stylesheet" href="../assets/css/global.css">
-  
-  <!-- CSS ESPECÍFICO (cambiar por el nombre de tu página) -->
-  <link rel="stylesheet" href="../assets/css/catalogo.css">
-  
+  <link rel="stylesheet" href="../assets/css/global.css" />
+
+  <!-- CSS ESPECÍFICO CATÁLOGO -->
+  <link rel="stylesheet" href="../assets/css/catalogo.css" />
+
   <!-- FUENTE POPPINS Y FAVICON -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="icon" href="../assets/img/logo-arriba.svg" type="image/svg+xml">
+
+  <!-- SEO / Social -->
+  <meta name="description" content="Catálogo de Óptica Nur: monturas de alta calidad y cristales avanzados para todas tus necesidades visuales." />
+  <meta property="og:title" content="Óptica Nur — Catálogo" />
+  <meta property="og:description" content="Catálogo de Óptica Nur: monturas de alta calidad y cristales avanzados para todas tus necesidades visuales." />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="es_VE" />
 </head>
 
 <body>
+  <!-- Overlay para menú móvil -->
+  <div class="menu-overlay" id="menuOverlay"></div>
+
   <!-- HEADER (COMÚN) -->
-  <header class="header">
+  <header class="header" role="banner">
     <div class="logo-container">
       <a href="index.html"><img src="../assets/img/logo-placeholder.svg" alt="Óptica Nur" class="logo" /></a>
     </div>
-    
-    <!-- MENÚ NAVEGACIÓN (ESCRITORIO) -->
-    <nav class="nav-menu">
+
+    <nav class="nav-menu" aria-label="Navegación principal" id="navMenu">
       <ul>
         <li><a href="index.html">Inicio</a></li>
-        <li><a href="catalogo.html">Catálogo</a></li>
+        <li><a href="catalogo.html" class="activo">Catálogo</a></li>
         <li><a href="contacto.html">Contacto</a></li>
-        <li><a href="faqs.html">Preguntas Frecuentes</a></li>
       </ul>
     </nav>
-    
-    <!-- MENÚ HAMBURGUESA (MÓVIL - POR IMPLEMENTAR) -->
-    <div class="menu-mobile">
+
+    <button class="menu-mobile" aria-label="Abrir menú" aria-expanded="false" aria-controls="navMenu" id="menuMobile">
       <span class="bar"></span>
       <span class="bar"></span>
       <span class="bar"></span>
-    </div>
+    </button>
   </header>
 
-  <!-- CONTENIDO PRINCIPAL (CADA UNO TRABAJA AQUÍ) -->
-  <main class="main-content">
-    <section class="contenido-pagina">
-      <!-- 
-        *************************************
-        ZONA DE TRABAJO INDIVIDUAL 
-        (Reemplazar esto con tu contenido)
-        *************************************
-      -->
-      <h1 class="titulo-principal">Título de la Página</h1>
-      <p>Contenido específico aquí...</p>
-      
+  <!-- CONTENIDO PRINCIPAL -->
+  <main class="main-content" id="main" role="main">
+    <section class="contenido-pagina" aria-labelledby="main-title">
+      <h1 id="main-title" class="titulo-principal">Nuestro Catálogo</h1>
+
+      <!-- Sección Monturas -->
+      <section class="seccion-categoria" id="seccion-monturas">
+        <h2 class="titulo-seccion">Monturas</h2>
+        <p class="descripcion-categoria">Encuentra la montura perfecta que combine estilo, comodidad y personalidad.</p>
+
+        <!-- Grid de productos - Monturas -->
+        <div class="productos-grid">
+          <!-- Producto 1 -->
+          <div class="producto-card">
+            <div class="producto-imagen">
+              <img src="../assets/img/monturas/montura-1.jpg" alt="Montura Clásica Ébano" loading="lazy">
+            </div>
+            <div class="producto-info">
+              <h3 class="producto-nombre">Montura Clásica Ébano</h3>
+              <p class="producto-descripcion">Diseño atemporal en acetato de alta calidad, ideal para looks formales.</p>
+              <div class="producto-precio">$85.000</div>
+              <div class="producto-etiquetas">
+                <span class="etiqueta estilo">Clásico</span>
+                <span class="etiqueta material">Acetato</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Producto 2 -->
+          <div class="producto-card">
+            <div class="producto-imagen">
+              <img src="../assets/img/monturas/montura-2.jpg" alt="Montura Moderna Acero" loading="lazy">
+            </div>
+            <div class="producto-info">
+              <h3 class="producto-nombre">Montura Moderna Acero</h3>
+              <p class="producto-descripcion">Líneas minimalistas en metal ligero, perfecta para el día a día.</p>
+              <div class="producto-precio">$65.000</div>
+              <div class="producto-etiquetas">
+                <span class="etiqueta estilo">Moderno</span>
+                <span class="etiqueta material">Metal</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Producto 3 -->
+          <div class="producto-card">
+            <div class="producto-imagen">
+              <img src="../assets/img/monturas/montura-3.jpg" alt="Montura Deportiva Active" loading="lazy">
+            </div>
+            <div class="producto-info">
+              <h3 class="producto-nombre">Montura Deportiva Active</h3>
+              <p class="producto-descripcion">Material flexible y resistente, diseñada para un estilo de vida activo.</p>
+              <div class="producto-precio">$95.000</div>
+              <div class="producto-etiquetas">
+                <span class="etiqueta estilo">Deportivo</span>
+                <span class="etiqueta material">Flexible</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Producto 4 -->
+          <div class="producto-card">
+            <div class="producto-imagen">
+              <img src="../assets/img/monturas/montura-4.jpg" alt="Montura Elegante Titan" loading="lazy">
+            </div>
+            <div class="producto-info">
+              <h3 class="producto-nombre">Montura Elegante Titan</h3>
+              <p class="producto-descripcion">Titanio ultraligero con acabados premium, para ocasiones especiales.</p>
+              <div class="producto-precio">$150.000</div>
+              <div class="producto-etiquetas">
+                <span class="etiqueta estilo">Elegante</span>
+                <span class="etiqueta material">Titanio</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Producto 5 -->
+          <div class="producto-card">
+            <div class="producto-imagen">
+              <img src="../assets/img/monturas/montura-5.jpg" alt="Montura Vintage Brown" loading="lazy">
+            </div>
+            <div class="producto-info">
+              <h3 class="producto-nombre">Montura Vintage Brown</h3>
+              <p class="producto-descripcion">Inspiración retro en acetato con detalles dorados, un clásico renovado.</p>
+              <div class="producto-precio">$78.000</div>
+              <div class="producto-etiquetas">
+                <span class="etiqueta estilo">Clásico</span>
+                <span class="etiqueta material">Acetato</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Producto 6 -->
+          <div class="producto-card">
+            <div class="producto-imagen">
+              <img src="../assets/img/monturas/montura-6.jpg" alt="Montura Urban Silver" loading="lazy">
+            </div>
+            <div class="producto-info">
+              <h3 class="producto-nombre">Montura Urban Silver</h3>
+              <p class="producto-descripcion">Diseño contemporáneo en metal plateado, ideal para looks urbanos.</p>
+              <div class="producto-precio">$70.000</div>
+              <div class="producto-etiquetas">
+                <span class="etiqueta estilo">Moderno</span>
+                <span class="etiqueta material">Metal</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Sección Cristales -->
+      <section class="seccion-categoria" id="seccion-cristales">
+        <h2 class="titulo-seccion">Cristales</h2>
+        <p class="descripcion-categoria">Tecnología avanzada en cristales para una visión perfecta en cualquier situación.</p>
+
+        <!-- Grid de productos - Cristales -->
+        <div class="productos-grid">
+          <!-- Producto 1 -->
+          <div class="producto-card">
+            <div class="producto-imagen">
+              <img src="../assets/img/cristales/cristal-1.jpg" alt="Cristal Monofocal Básico" loading="lazy">
+            </div>
+            <div class="producto-info">
+              <h3 class="producto-nombre">Cristal Monofocal Básico</h3>
+              <p class="producto-descripcion">Corrección simple para miopía o hipermetropía, con tratamiento antirreflejo.</p>
+              <div class="producto-precio">$45.000</div>
+              <div class="producto-etiquetas">
+                <span class="etiqueta tipo">Monofocal</span>
+                <span class="etiqueta material">Orgánico</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Producto 2 -->
+          <div class="producto-card">
+            <div class="producto-imagen">
+              <img src="../assets/img/cristales/cristal-2.jpg" alt="Cristal Progresivo Premium" loading="lazy">
+            </div>
+            <div class="producto-info">
+              <h3 class="producto-nombre">Cristal Progresivo Premium</h3>
+              <p class="producto-descripcion">Transición suave entre visión lejana, intermedia y cercana.</p>
+              <div class="producto-precio">$120.000</div>
+              <div class="producto-etiquetas">
+                <span class="etiqueta tipo">Progresivo</span>
+                <span class="etiqueta material">Policarbonato</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Producto 3 -->
+          <div class="producto-card">
+            <div class="producto-imagen">
+              <img src="../assets/img/cristales/cristal-3.jpg" alt="Cristal Fotocromático Adapt" loading="lazy">
+            </div>
+            <div class="producto-info">
+              <h3 class="producto-nombre">Cristal Fotocromático Adapt</h3>
+              <p class="producto-descripcion">Se oscurece con la luz solar y filtra la luz azul de dispositivos.</p>
+              <div class="producto-precio">$95.000</div>
+              <div class="producto-etiquetas">
+                <span class="etiqueta tipo">Fotocromático</span>
+                <span class="etiqueta material">Trivex</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Producto 4 -->
+          <div class="producto-card">
+            <div class="producto-imagen">
+              <img src="../assets/img/cristales/cristal-4.jpg" alt="Cristal Bifocal Comfort" loading="lazy">
+            </div>
+            <div class="producto-info">
+              <h3 class="producto-nombre">Cristal Bifocal Comfort</h3>
+              <p class="producto-descripcion">Dos zonas de visión: lejana y cercana, con tratamiento anti-rayas.</p>
+              <div class="producto-precio">$75.000</div>
+              <div class="producto-etiquetas">
+                <span class="etiqueta tipo">Bifocal</span>
+                <span class="etiqueta material">Orgánico</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Producto 5 -->
+          <div class="producto-card">
+            <div class="producto-imagen">
+              <img src="../assets/img/cristales/cristal-5.jpg" alt="Cristal Monofocal Resist" loading="lazy">
+            </div>
+            <div class="producto-info">
+              <h3 class="producto-nombre">Cristal Monofocal Resist</h3>
+              <p class="producto-descripcion">Cristal mineral de alta resistencia con todos los tratamientos incluidos.</p>
+              <div class="producto-precio">$65.000</div>
+              <div class="producto-etiquetas">
+                <span class="etiqueta tipo">Monofocal</span>
+                <span class="etiqueta material">Mineral</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Producto 6 -->
+          <div class="producto-card">
+            <div class="producto-imagen">
+              <img src="../assets/img/cristales/cristal-6.jpg" alt="Cristal Progresivo Office" loading="lazy">
+            </div>
+            <div class="producto-info">
+              <h3 class="producto-nombre">Cristal Progresivo Office</h3>
+              <p class="producto-descripcion">Optimizado para uso con pantallas y trabajo de oficina.</p>
+              <div class="producto-precio">$110.000</div>
+              <div class="producto-etiquetas">
+                <span class="etiqueta tipo">Progresivo</span>
+                <span class="etiqueta material">Orgánico</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Sección de información adicional -->
+      <section class="seccion-info-adicional">
+        <h2 class="titulo-seccion">¿Necesitas Asesoramiento?</h2>
+        <div class="info-grid">
+          <div class="info-card">
+            <div class="info-icono">👁️</div>
+            <h3>Examen Visual Completo</h3>
+            <p>Realizamos un examen completo para determinar la graduación exacta que necesitas.</p>
+          </div>
+          <div class="info-card">
+            <div class="info-icono">🎨</div>
+            <h3>Asesoramiento de Estilo</h3>
+            <p>Te ayudamos a elegir la montura que mejor se adapte a tu rostro y personalidad.</p>
+          </div>
+          <div class="info-card">
+            <div class="info-icono">⚙️</div>
+            <h3>Ajuste y Adaptación</h3>
+            <p>Ajustamos tus gafas para máxima comodidad y te guiamos en el periodo de adaptación.</p>
+          </div>
+        </div>
+        <div class="info-acciones">
+          <a href="contacto.html" class="btn">Agendar Cita</a>
+        </div>
+      </section>
     </section>
   </main>
 
   <!-- FOOTER (COMÚN) -->
-  <footer class="footer">
+  <footer class="footer" role="contentinfo">
     <div class="footer-content">
-      <p>© 2025 Óptica Nur - Barquisimeto, Venezuela</p>
+      <p>© <span id="year"></span> Óptica Nur - Barquisimeto, Venezuela</p>
       <div class="social-links">
-        <a href="#" aria-label="Facebook">
-          <img src="../assets/img/icons/facebook.svg" alt="Facebook" class="social-icon">
-        </a>
-        <a href="#" aria-label="Instagram">
-          <img src="../assets/img/icons/instagram.svg" alt="Instagram" class="social-icon">
-        </a>
+        <a href="https://www.facebook.com/opticanurbarquisimeto/?locale=es_LA" aria-label="Facebook"><img src="../assets/img/icons/facebook.svg" alt="" class="social-icon"></a>
+        <a href="https://www.instagram.com/optica.nur/?hl=es" aria-label="Instagram"><img src="../assets/img/icons/instagram.svg" alt="" class="social-icon"></a>
       </div>
     </div>
   </footer>
+
+  <!-- BOTÓN MANUAL DE USUARIO -->
+
+  <!-- SCRIPTS BÁSICOS -->
+  <script>
+    // Año dinámico
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Función para abrir el manual
+    function abrirManual() {
+      window.open('manual-usuario.html', '_blank', 'width=1000,height=700,scrollbars=yes');
+    }
+
+    // Menú hamburguesa básico
+    document.addEventListener("DOMContentLoaded", () => {
+      const menuBtn = document.getElementById('menuMobile');
+      const navMenu = document.getElementById('navMenu');
+      const menuOverlay = document.getElementById('menuOverlay');
+      const body = document.body;
+
+      function toggleMenu() {
+        const expanded = menuBtn.getAttribute('aria-expanded') === 'true';
+        menuBtn.setAttribute('aria-expanded', String(!expanded));
+        menuBtn.classList.toggle('active');
+        navMenu.classList.toggle('active');
+        menuOverlay.classList.toggle('active');
+        body.style.overflow = expanded ? 'auto' : 'hidden';
+      }
+
+      function closeMenu() {
+        menuBtn.setAttribute('aria-expanded', 'false');
+        menuBtn.classList.remove('active');
+        navMenu.classList.remove('active');
+        menuOverlay.classList.remove('active');
+        body.style.overflow = 'auto';
+      }
+
+      if (menuBtn && navMenu && menuOverlay) {
+        menuBtn.addEventListener('click', toggleMenu);
+        menuOverlay.addEventListener('click', closeMenu);
+
+        const navLinks = navMenu.querySelectorAll('a');
+        navLinks.forEach(link => {
+          link.addEventListener('click', closeMenu);
+        });
+
+        document.addEventListener('keydown', (e) => {
+          if (e.key === 'Escape' && navMenu.classList.contains('active')) {
+            closeMenu();
+          }
+        });
+      }
+    });
+  </script>
 </body>
 </html>

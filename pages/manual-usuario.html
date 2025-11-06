@@ -3,115 +3,122 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Manual de Usuario - Óptica Nur</title>
+  <link rel="icon" href="../assets/img/logo-arriba.svg" type="image/svg+xml">
   
+  <title>Manual de Usuario - Óptica Nur</title>
+
   <!-- CSS GLOBAL -->
   <link rel="stylesheet" href="../assets/css/global.css">
-  
-  <!-- CSS ESPECÍFICO PARA EL MANUAL -->
+
+  <!-- CSS DEL MANUAL -->
   <style>
     .manual-container {
       max-width: 900px;
       margin: 0 auto;
-      padding: 2rem;
+      padding: var(--espaciado-lg);
     }
-    
+
     .manual-header {
       text-align: center;
-      margin-bottom: 3rem;
-      background: linear-gradient(135deg, var(--color-primario), var(--color-bordes));
-      color: var(--color-secundario);
-      padding: 2rem;
+      margin-bottom: var(--espaciado-xl);
+      background: var(--color-fondo);
+      padding: var(--espaciado-lg);
       border-radius: var(--radio-borde);
+      box-shadow: var(--sombra-media);
     }
-    
+
     .manual-section {
       background: var(--color-secundario);
-      padding: 2rem;
-      margin-bottom: 2rem;
+      padding: var(--espaciado-lg);
+      margin-bottom: var(--espaciado-lg);
       border-radius: var(--radio-borde);
-      box-shadow: var(--sombra-suave);
       border-left: 4px solid var(--color-primario);
+      box-shadow: var(--sombra-suave);
     }
-    
+
     .manual-section h2 {
       color: var(--color-primario);
-      margin-bottom: 1rem;
+      margin-bottom: var(--espaciado-sm);
     }
-    
-    .manual-step {
-      display: flex;
-      align-items: flex-start;
-      margin-bottom: 1.5rem;
-      padding: 1rem;
-      background: var(--color-fondo);
+
+    .manual-image {
+      text-align: center;
+      margin-top: var(--espaciado-md);
+    }
+
+    .manual-image img {
+      max-width: 100%;
       border-radius: var(--radio-borde);
+      box-shadow: var(--sombra-media);
+      border: 1px solid var(--color-bordes);
     }
-    
-    .step-number {
-      background: var(--color-primario);
-      color: var(--color-secundario);
-      width: 30px;
-      height: 30px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: bold;
-      margin-right: 1rem;
-      flex-shrink: 0;
+
+    .img-caption {
+      font-size: 0.9rem;
+      color: #555;
+      margin-top: var(--espaciado-xs);
+      font-style: italic;
     }
-    
-    .step-content {
-      flex: 1;
+
+    .step-list {
+      margin-left: var(--espaciado-md);
+      margin-bottom: var(--espaciado-sm);
     }
-    
+
+    .step-list li {
+      margin-bottom: var(--espaciado-xs);
+    }
+
     .feature-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1.5rem;
-      margin-top: 1rem;
+      gap: var(--espaciado-md);
+      margin-top: var(--espaciado-md);
     }
-    
+
     .feature-card {
       background: var(--color-fondo);
-      padding: 1.5rem;
+      padding: var(--espaciado-md);
       border-radius: var(--radio-borde);
       border: 1px solid var(--color-bordes);
     }
-    
+
     .feature-card h4 {
       color: var(--color-primario);
-      margin-bottom: 0.5rem;
+      margin-bottom: var(--espaciado-xs);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
     }
-    
+
     .tip-box {
-      background: #fff3cd;
-      border: 1px solid #ffeaa7;
-      border-radius: var(--radio-borde);
-      padding: 1rem;
-      margin: 1rem 0;
+      background: rgba(0, 185, 216, 0.1);
+      border-left: 4px solid var(--color-primario);
+      padding: var(--espaciado-md);
+      margin: var(--espaciado-md) 0;
+      border-radius: 0 var(--radio-borde) var(--radio-borde) 0;
     }
-    
-    .contact-info {
-      background: var(--color-primario);
-      color: var(--color-secundario);
-      padding: 2rem;
-      border-radius: var(--radio-borde);
-      text-align: center;
+
+    .bordes {
+      border: 4px solid var(--color-primario);
+      background-color: var(--color-fondo);
     }
-    
+
+    .image-tamanio {
+      width: 50%;
+      margin: auto;
+    }
+
+    hr {
+      border: none;
+      border-top: 1px solid var(--color-bordes);
+      box-shadow: 0 0 0px 30px var(--sombra-suave);
+
+    }
+
     @media (max-width: 768px) {
       .manual-container {
-        padding: 1rem;
-      }
-      
-      .manual-step {
-        flex-direction: column;
-      }
-      
-      .step-number {
-        margin-bottom: 0.5rem;
+        padding: var(--espaciado-md);
       }
       
       .feature-grid {
@@ -123,140 +130,248 @@
 
 <body>
   <div class="manual-container">
-    <!-- Encabezado -->
-    <header class="manual-header">
-      <h1>📖 Manual de Usuario</h1>
-      <p>Guía completa para navegar por el sitio web de Óptica Nur</p>
+
+    <!-- ENCABEZADO -->
+    <header class="manual-header bordes">
+      <h1 class="titulo-principal">📖 Manual de Usuario</h1>
+      <p>Guía práctica para navegar el sitio web de <strong>Óptica Nur</strong>.</p>
     </header>
 
-    <!-- Sección de Navegación -->
+    <!-- SECCIÓN NAVEGACIÓN -->
     <section class="manual-section">
-      <h2>🚀 Navegación Principal</h2>
+      <h2>🧭 Navegación del Sitio</h2>
+      <p>El sitio web cuenta con dos tipos de navegación según el dispositivo:</p>
       
-      <div class="manual-step">
-        <div class="step-number">1</div>
-        <div class="step-content">
-          <h3>Menú de Navegación</h3>
-          <p>Utiliza el menú superior para acceder a las diferentes secciones del sitio:</p>
-          <ul>
-            <li><strong>Inicio:</strong> Página principal con información general</li>
-            <li><strong>Catálogo:</strong> Productos y servicios disponibles</li>
-            <li><strong>Contacto:</strong> Ubicaciones, horarios y teléfonos</li>
-            <li><strong>Preguntas Frecuentes:</strong> Respuestas a dudas comunes</li>
-          </ul>
-        </div>
-      </div>
+      <h3>Navegación en Escritorio</h3>
+      <p>En computadoras verás el menú completo en la parte superior:</p>
+      <ul class="step-list">
+        <li><strong>Haz clic en cualquier opción del menú</strong> para ir de una sección a otra</li>
+        <li>El enlace de la página activa se resalta con color azul</li>
+      </ul>
       
-      <div class="manual-step">
-        <div class="step-number">2</div>
-        <div class="step-content">
-          <h3>Menú Móvil</h3>
-          <p>En dispositivos móviles, haz clic en el ícono ☰ (hamburguesa) para desplegar el menú de navegación.</p>
-        </div>
+      <div class="manual-image">
+        <img src="../assets/img/manual/Nav-lista.png" alt="Navegación en escritorio">
       </div>
+
+      <br>
+      <hr>
+      <br>
+
+      <h3>Navegación en Móvil </h3>
+      <p>En tablets y teléfonos verás un icono de hamburguesa (☰):</p>
+      <ul class="step-list">
+        <li><strong>Toca el icono ☰</strong> para desplegar el menú</li>
+        <div class="manual-image">
+          <img src="../assets/img/manual/Nav-menu de hamburguesa.png" alt="Navegación en móvil">
+        </div>
+        <li>Selecciona la sección que deseas visitar</li>
+        <div class="manual-image">
+          <img src="../assets/img/manual/Nav-hamburguesa abierta.png" alt="Navegación en móvil">
+        </div>
+        <li>Toca fuera del menú o presiona la X para cerrarlo</li>
+        <li>También puedes usar la tecla Escape para cerrar el menú</li>
+      </ul>
     </section>
 
-    <!-- Sección de Funcionalidades -->
+    <!-- SECCIÓN INICIO -->
     <section class="manual-section">
-      <h2>💡 Funcionalidades Principales</h2>
+      <h2>🏠 Página de Inicio</h2>
+      <p>La página principal te da la bienvenida con información general de la óptica</p>
+
+      <h3>Parte Superior</h3>
+      <p>Esta es la primera sección que verás al entrar al sitio:</p>
+      <ul class="step-list">
+        <li><strong>Ver Catálogo:</strong> Te lleva directamente a ver nuestros productos</li>
+        <li><strong>Agendar Cita:</strong> Te dirige a la página de contacto para programar una cita</li>
+      </ul>
+
+      <div class="manual-image">
+        <img class="image-tamanio" src="../assets/img/manual/Inicio-1.png" alt="Sección hero de la página de inicio">
+      </div>
+
+      <br>
+      <hr>
+      <br>
+
+      <h3>Servicios Especializados</h3>
+      <p>Desplázate hacia abajo para conocer todos nuestros servicios:</p>
       
       <div class="feature-grid">
         <div class="feature-card">
-          <h4>📍 Ubicaciones</h4>
-          <p>Encuentra nuestras sedes con mapas interactivos, horarios de atención y direcciones exactas.</p>
+          <h4>🕶️ Lentes de Contacto</h4>
+          <p>Amplia variedad para todas las necesidades y estilos</p>
         </div>
-        
         <div class="feature-card">
-          <h4>📞 Contacto Directo</h4>
-          <p>Haz clic en los números de teléfono para llamar directamente o en WhatsApp para chatear.</p>
+          <h4>🔬 Monturas Exclusivas</h4>
+          <p>Diseños únicos que se adaptan a tu personalidad</p>
         </div>
-        
-        <div class="feature-card">
-          <h4>🛍️ Catálogo de Productos</h4>
-          <p>Explora nuestra variedad de lentes, monturas y accesorios ópticos.</p>
-        </div>
-        
-        <div class="feature-card">
-          <h4>❓ Preguntas Frecuentes</h4>
-          <p>Encuentra respuestas rápidas a las consultas más comunes sobre nuestros servicios.</p>
-        </div>
+      </div>
+
+      <br>
+      <hr>
+      <br>
+
+      <h3>Llamada a la Acción Final</h3>
+      <p>Al final de la página encontrarás botones destacados para:</p>
+      <ul class="step-list">
+        <li><strong>Agendar Cita:</strong> Completa el formulario de contacto</li>
+        <li><strong>Llamar Ahora:</strong> Contactarnos directamente por teléfono</li>
+      </ul>
+
+      <div class="manual-image image-tamanio">
+        <img src="../assets/img/manual/inicio-llamada.png" alt="Sección final de llamada a la acción">
       </div>
     </section>
 
-    <!-- Sección de Contacto -->
+    <!-- SECCIÓN CATÁLOGO -->
     <section class="manual-section">
-      <h2>📞 Cómo Contactarnos</h2>
-      
-      <div class="manual-step">
-        <div class="step-number">1</div>
-        <div class="step-content">
-          <h3>Teléfono y WhatsApp</h3>
-          <p>Haz clic en cualquier número de teléfono para llamar directamente, o en el botón de WhatsApp para enviar un mensaje.</p>
+      <h2>🛍️ Catálogo</h2>
+      <p>En el catálogo podrás explorar todos nuestros productos:</p>
+
+      <h3>Navegación por Categorías</h3>
+      <ul class="step-list">
+        <div class="manual-image">
+          <img src="../assets/img/manual/catalogo.png" alt="Catálogo de productos de Óptica Nur">
         </div>
-      </div>
-      
-      <div class="manual-step">
-        <div class="step-number">2</div>
-        <div class="step-content">
-          <h3>Visítanos</h3>
-          <p>Utiliza los mapas interactivos para encontrar la ruta más fácil hacia nuestras sedes.</p>
+        <li><strong>Monturas:</strong> Gran variedad de estilos y marcas</li>
+        <div class="manual-image">
+          <img src="../assets/img/manual/catalogo.png" alt="Catálogo de productos de Óptica Nur">
         </div>
+        <li><strong>Cristales</strong> Para diferentes necesidades visuales</li>
+      </ul>
+
+      <br>
+      <hr>
+      <br>
+
+      <h3>Vista de Productos</h3>
+      <ul class="step-list">
+        <li>Cada producto muestra:  <strong>descripción, precio y caracteristicas</strong></li>
+        
+      </ul>
+
+      <div class="manual-image">
+        <img src="../assets/img/manual/catalogo.png" alt="Catálogo de productos de Óptica Nur">
       </div>
-      
-      <div class="tip-box">
-        <strong>💡 Tip:</strong> Nuestra Sede Este cuenta con estacionamiento privado gratuito para clientes.
+
+      <br>
+      <hr>
+      <br>
+    
+      <h3> </h3>
+      <p>Al final del catálogo encontrarás esta sección con servicios especializados:</p>
+
+      <div class="manual-image">
+        <img class="image-tamanio" src="../assets/img/manual/asesoramiento-catalogo.png" alt="Sección de asesoramiento en el catálogo">
       </div>
+
+      <h3>Servicios Disponibles</h3>
+      <ul class="step-list">
+        <li><strong>👁️ Examen Visual Completo</strong> - Determinamos tu graduación exacta</li>
+        <li><strong>🎨 Asesoramiento de Estilo</strong> - Te ayudamos a elegir monturas</li>
+        <li><strong>⚙️ Ajuste y Adaptación</strong> - Aseguramos comodidad perfecta</li>
+        <li>Haz clic en <strong>"Agendar Cita"</strong> para contactarnos</li>
+      </ul>
+
     </section>
 
-    <!-- Sección de Soporte Técnico -->
+    <!-- SECCIÓN CONTACTO -->
     <section class="manual-section">
-      <h2>🔧 Soporte Técnico</h2>
-      
-      <div class="manual-step">
-        <div class="step-number">1</div>
-        <div class="step-content">
-          <h3>Problemas de Visualización</h3>
-          <p>Si experimentas problemas al ver el sitio web:</p>
-          <ul>
-            <li>Actualiza la página (F5 o Ctrl+R)</li>
-            <li>Limpia la caché del navegador</li>
-            <li>Verifica tu conexión a internet</li>
-          </ul>
+      <h2>📞 Página de Contacto</h2>
+      <p>Encuentra toda la información para visitarnos o contactarnos directamente.</p>
+
+      <h3>Información de Sedes</h3>
+      <p>Contamos con dos sedes en Barquisimeto:</p>
+
+      <div class="feature-grid">
+        <div class="feature-card">
+          <h4>📍 Sede Este</h4>
+          <p>Av. Venezuela con Av. Argimiro Bracamonte, Torre Financiera, Piso 2</p>
+          <p><strong>Horario:</strong> Lunes a Viernes 8:00 AM - 12:00 M / 1:00 PM - 4:00 PM</p>
+        </div>
+        <div class="feature-card">
+          <h4>📍 Sede Centro</h4>
+          <p>Calle 23 con Carrera 18, Torre Financiera del Centro</p>
+          <p><strong>Horario:</strong> Lunes a Viernes 8:00 AM - 12:00 M / 1:00 PM - 4:00 PM</p>
         </div>
       </div>
-      
-      <div class="manual-step">
-        <div class="step-number">2</div>
-        <div class="step-content">
-          <h3>Navegadores Compatibles</h3>
-          <p>El sitio funciona correctamente en:</p>
-          <ul>
-            <li>Google Chrome</li>
-            <li>Mozilla Firefox</li>
-            <li>Safari</li>
-            <li>Microsoft Edge</li>
-          </ul>
-        </div>
+
+      <br>
+      <hr>
+      <br>
+
+      <h3>Mapas Interactivos</h3>
+      <ul class="step-list">
+        <li>Cada sede incluye un mapa interactivo de Google Maps</li>
+        <li><strong>Google Maps:</strong> Abre la ubicación en Google Maps</li>
+        <li><strong>WhatsApp:</strong> Inicia una conversación directa por WhatsApp</li>
+      </ul>
+
+      <div class="manual-image">
+        <img class="image-tamanio" src="../assets/img/manual/sede-este.png" alt="Mapa interactivo en página de contacto">
+        <img class="image-tamanio" src="../assets/img/manual/sede-centro.png" alt="Mapa interactivo en página de contacto">
       </div>
+
+      <br>
+      <hr>
+      <br>
+
+      <h3>¿Cómo Llegar?</h3>
+      <p>Información detallada sobre opciones de transporte:</p>
+
+      <div class="manual-image">
+        <img class="image-tamanio" src="../assets/img/manual/contacto-transporte.png" alt="Opciones de transporte">
+      </div>
+
+      <ul class="step-list">
+        <li><strong>🚗 En automóvil:</strong> Estacionamiento privado gratuito en Sede Este</li>
+        <li><strong>🚌 Transporte público:</strong> Rutas disponibles para cada sede</li>
+        <li><strong>🅿️ Paradas cercanas:</strong> Puntos de referencia para peatones</li>
+      </ul>
+
     </section>
 
-    <!-- Información de Contacto -->
-    <section class="contact-info">
-      <h3>¿Necesitas Ayuda Adicional?</h3>
-      <p>Contáctanos directamente:</p>
-      <p><strong>📞 Teléfono:</strong> 0426-8561256</p>
-      <p><strong>📧 Email:</strong> info@opticanur.com</p>
-      <p><strong>🕒 Horario:</strong> Lunes a Viernes 8:00 AM - 4:00 PM</p>
+    <!-- SECCIÓN BOTÓN MANUAL -->
+    <section class="manual-section">
+      <h2>❓ ¿Cómo Usar Este Manual?</h2>
+      <p>Este manual está diseñado para ser tu guía permanente mientras usas el sitio web:</p>
+      
+      <h3>Botón de Manual de Usuario</h3>
+      <p>En todas las páginas del sitio encontrarás un botón flotante:</p>
+      <div class="manual-image">
+        <img class="logo" src="../assets/img/manual/boton-manual.png" alt="Botón del manual de usuario">
+      </div>
+      <ul class="step-list">
+        <li><strong>Ubicación:</strong> Esquina inferior derecha de la pantalla</li>
+        <li><strong>Función:</strong> Abre este manual en una nueva pestaña</li>
+        <li><strong>En móvil:</strong> Se adapta al tamaño de la pantalla</li>
+      </ul>
+
+      
     </section>
+
+    <!-- SECCIÓN AYUDA ADICIONAL -->
+    <section class="manual-section">
+      <h2>🆕 ¿Necesitas Más Ayuda?</h2>
+      <p>Si después de consultar este manual aún tienes preguntas:</p>
+      
+      <div class="feature-grid">
+        
+        <div class="feature-card">
+          <h4>💬 WhatsApp</h4>
+          <p>Escríbenos por WhatsApp para respuestas rápidas</p>
+        </div>
+        <div class="feature-card">
+          <h4>📍 Visítanos</h4>
+          <p>Ven a cualquiera de nuestras sedes para atención presencial</p>
+        </div>
+      </div>
+
+      <p style="text-align: center; margin-top: var(--espaciado-lg);">
+        <strong>¡Gracias por elegir Óptica Nur!</strong>
+      </p>
+    </section>
+
   </div>
-
-  <script>
-    // Cerrar ventana con Escape
-    document.addEventListener('keydown', function(e) {
-      if (e.key === 'Escape') {
-        window.close();
-      }
-    });
-  </script>
 </body>
 </html>
