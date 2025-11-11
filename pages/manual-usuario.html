@@ -27,6 +27,22 @@
       box-shadow: var(--sombra-media);
     }
 
+    .header-content {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: var(--espaciado-md);
+      flex-wrap: wrap;
+      margin-bottom: var(--espaciado-sm);
+    }
+
+    .header-content h1 {
+      margin: 0;
+      display: flex;
+      align-items: center;
+      gap: var(--espaciado-md);
+    }
+
     .manual-section {
       background: var(--color-secundario);
       padding: var(--espaciado-lg);
@@ -109,11 +125,16 @@
       margin: auto;
     }
 
+    .image-tamanio-especifico {
+      width: 80px;
+      height: 80px;
+      vertical-align: middle;
+    }
+
     hr {
       border: none;
       border-top: 1px solid var(--color-bordes);
-      box-shadow: 0 0 0px 30px var(--sombra-suave);
-
+      margin: var(--espaciado-md) 0;
     }
 
     @media (max-width: 768px) {
@@ -124,6 +145,20 @@
       .feature-grid {
         grid-template-columns: 1fr;
       }
+
+      .header-content {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .image-tamanio-especifico {
+        width: 60px;
+        height: 60px;
+      }
+
+      .image-tamanio {
+        width: 80%;
+      }
     }
   </style>
 </head>
@@ -133,13 +168,18 @@
 
     <!-- ENCABEZADO -->
     <header class="manual-header bordes">
-      <h1 class="titulo-principal">📖 Manual de Usuario</h1>
+      <div class="header-content">
+        <h1 class="titulo-principal">
+          <img class="image-tamanio-especifico" src="../assets/img/manual/manual.webp" alt="Icono manual">
+          Manual de Usuario
+        </h1>
+      </div>
       <p>Guía práctica para navegar el sitio web de <strong>Óptica Nur</strong>.</p>
     </header>
 
     <!-- SECCIÓN NAVEGACIÓN -->
     <section class="manual-section">
-      <h2>🧭 Navegación del Sitio</h2>
+      <h2><img class="image-tamanio-especifico" src="../assets/img/manual/navegar.webp" alt=""> Navegación del Sitio</h2>
       <p>El sitio web cuenta con dos tipos de navegación según el dispositivo:</p>
       
       <h3>Navegación en Escritorio</h3>
@@ -150,7 +190,7 @@
       </ul>
       
       <div class="manual-image">
-        <img src="../assets/img/manual/Nav-lista.png" alt="Navegación en escritorio">
+        <img src="../assets/img/manual/Nav-lista.webp" alt="Navegación en escritorio">
       </div>
 
       <br>
@@ -162,11 +202,11 @@
       <ul class="step-list">
         <li><strong>Toca el icono ☰</strong> para desplegar el menú</li>
         <div class="manual-image">
-          <img src="../assets/img/manual/Nav-menu de hamburguesa.png" alt="Navegación en móvil">
+          <img src="../assets/img/manual/Nav-menu de hamburguesa.webp" alt="Navegación en móvil">
         </div>
         <li>Selecciona la sección que deseas visitar</li>
         <div class="manual-image">
-          <img src="../assets/img/manual/Nav-hamburguesa abierta.png" alt="Navegación en móvil">
+          <img src="../assets/img/manual/Nav-hamburguesa abierta.webp" alt="Navegación en móvil">
         </div>
         <li>Toca fuera del menú o presiona la X para cerrarlo</li>
         <li>También puedes usar la tecla Escape para cerrar el menú</li>
@@ -175,7 +215,7 @@
 
     <!-- SECCIÓN INICIO -->
     <section class="manual-section">
-      <h2>🏠 Página de Inicio</h2>
+      <h2><img class="image-tamanio-especifico" src="../assets/img/manual/inicio.webp" alt=""> Página de Inicio</h2>
       <p>La página principal te da la bienvenida con información general de la óptica</p>
 
       <h3>Parte Superior</h3>
@@ -186,7 +226,7 @@
       </ul>
 
       <div class="manual-image">
-        <img class="image-tamanio" src="../assets/img/manual/Inicio-1.png" alt="Sección hero de la página de inicio">
+        <img class="image-tamanio" src="../assets/img/manual/Inicio-1.webp" alt="Sección hero de la página de inicio">
       </div>
 
       <br>
@@ -219,23 +259,23 @@
       </ul>
 
       <div class="manual-image image-tamanio">
-        <img src="../assets/img/manual/inicio-llamada.png" alt="Sección final de llamada a la acción">
+        <img src="../assets/img/manual/inicio-llamada.webp" alt="Sección final de llamada a la acción">
       </div>
     </section>
 
     <!-- SECCIÓN CATÁLOGO -->
     <section class="manual-section">
-      <h2>🛍️ Catálogo</h2>
+      <h2><img class="image-tamanio-especifico" src="../assets/img/manual/catalogo.webp" alt=""> Catálogo</h2>
       <p>En el catálogo podrás explorar todos nuestros productos:</p>
 
       <h3>Navegación por Categorías</h3>
       <ul class="step-list">
         <div class="manual-image">
-          <img src="../assets/img/manual/catalogo.png" alt="Catálogo de productos de Óptica Nur">
+          <img class="image-tamanio" src="../assets/img/manual/monturas.webp" alt="Catálogo de productos de Óptica Nur">
         </div>
         <li><strong>Monturas:</strong> Gran variedad de estilos y marcas</li>
         <div class="manual-image">
-          <img src="../assets/img/manual/catalogo.png" alt="Catálogo de productos de Óptica Nur">
+          <img class="image-tamanio" src="../assets/img/manual/Cristales.webp" alt="Catálogo de productos de Óptica Nur">
         </div>
         <li><strong>Cristales</strong> Para diferentes necesidades visuales</li>
       </ul>
@@ -246,12 +286,12 @@
 
       <h3>Vista de Productos</h3>
       <ul class="step-list">
-        <li>Cada producto muestra:  <strong>descripción, precio y caracteristicas</strong></li>
+        <li>Cada producto muestra:  <strong>descripción y caracteristicas</strong></li>
         
       </ul>
 
       <div class="manual-image">
-        <img src="../assets/img/manual/catalogo.png" alt="Catálogo de productos de Óptica Nur">
+        <img  src="../assets/img/manual/vista de producto.webp" alt="Catálogo de productos de Óptica Nur">
       </div>
 
       <br>
@@ -262,7 +302,7 @@
       <p>Al final del catálogo encontrarás esta sección con servicios especializados:</p>
 
       <div class="manual-image">
-        <img class="image-tamanio" src="../assets/img/manual/asesoramiento-catalogo.png" alt="Sección de asesoramiento en el catálogo">
+        <img class="image-tamanio" src="../assets/img/manual/asesoramiento-catalogo.webp" alt="Sección de asesoramiento en el catálogo">
       </div>
 
       <h3>Servicios Disponibles</h3>
@@ -270,14 +310,14 @@
         <li><strong>👁️ Examen Visual Completo</strong> - Determinamos tu graduación exacta</li>
         <li><strong>🎨 Asesoramiento de Estilo</strong> - Te ayudamos a elegir monturas</li>
         <li><strong>⚙️ Ajuste y Adaptación</strong> - Aseguramos comodidad perfecta</li>
-        <li>Haz clic en <strong>"Agendar Cita"</strong> para contactarnos</li>
+        <li>Haz clic en <strong>Agendar Cita</strong> para contactarnos</li>
       </ul>
 
     </section>
 
     <!-- SECCIÓN CONTACTO -->
     <section class="manual-section">
-      <h2>📞 Página de Contacto</h2>
+      <h2><img class="image-tamanio-especifico" src="../assets/img/manual/contacto.webp" alt=""> Página de Contacto</h2>
       <p>Encuentra toda la información para visitarnos o contactarnos directamente.</p>
 
       <h3>Información de Sedes</h3>
@@ -285,12 +325,12 @@
 
       <div class="feature-grid">
         <div class="feature-card">
-          <h4>📍 Sede Este</h4>
+          <h4><img class="image-tamanio-especifico" src="../assets/img/manual/local.webp" alt=""> Sede Este</h4>
           <p>Av. Venezuela con Av. Argimiro Bracamonte, Torre Financiera, Piso 2</p>
           <p><strong>Horario:</strong> Lunes a Viernes 8:00 AM - 12:00 M / 1:00 PM - 4:00 PM</p>
         </div>
         <div class="feature-card">
-          <h4>📍 Sede Centro</h4>
+          <h4><img class="image-tamanio-especifico" src="../assets/img/manual/local.webp" alt=""> Sede Centro</h4>
           <p>Calle 23 con Carrera 18, Torre Financiera del Centro</p>
           <p><strong>Horario:</strong> Lunes a Viernes 8:00 AM - 12:00 M / 1:00 PM - 4:00 PM</p>
         </div>
@@ -308,8 +348,8 @@
       </ul>
 
       <div class="manual-image">
-        <img class="image-tamanio" src="../assets/img/manual/sede-este.png" alt="Mapa interactivo en página de contacto">
-        <img class="image-tamanio" src="../assets/img/manual/sede-centro.png" alt="Mapa interactivo en página de contacto">
+        <img class="image-tamanio" src="../assets/img/manual/sede-este.webp" alt="Mapa interactivo en página de contacto">
+        <img class="image-tamanio" src="../assets/img/manual/sede-centro.webp" alt="Mapa interactivo en página de contacto">
       </div>
 
       <br>
@@ -320,7 +360,7 @@
       <p>Información detallada sobre opciones de transporte:</p>
 
       <div class="manual-image">
-        <img class="image-tamanio" src="../assets/img/manual/contacto-transporte.png" alt="Opciones de transporte">
+        <img class="image-tamanio" src="../assets/img/manual/contacto-transporte.webp" alt="Opciones de transporte">
       </div>
 
       <ul class="step-list">
@@ -333,13 +373,13 @@
 
     <!-- SECCIÓN BOTÓN MANUAL -->
     <section class="manual-section">
-      <h2>❓ ¿Cómo Usar Este Manual?</h2>
+      <h2>¿Cómo Usar Este Manual?</h2>
       <p>Este manual está diseñado para ser tu guía permanente mientras usas el sitio web:</p>
       
       <h3>Botón de Manual de Usuario</h3>
       <p>En todas las páginas del sitio encontrarás un botón flotante:</p>
       <div class="manual-image">
-        <img class="logo" src="../assets/img/manual/boton-manual.png" alt="Botón del manual de usuario">
+        <img class="logo" src="../assets/img/manual/boton-manual.webp" alt="Botón del manual de usuario">
       </div>
       <ul class="step-list">
         <li><strong>Ubicación:</strong> Esquina inferior derecha de la pantalla</li>
@@ -352,7 +392,7 @@
 
     <!-- SECCIÓN AYUDA ADICIONAL -->
     <section class="manual-section">
-      <h2>🆕 ¿Necesitas Más Ayuda?</h2>
+      <h2>¿Necesitas Más Ayuda?</h2>
       <p>Si después de consultar este manual aún tienes preguntas:</p>
       
       <div class="feature-grid">
