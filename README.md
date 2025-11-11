@@ -65,9 +65,12 @@ Optica-nur-web/
 │   │   ├── global.css           # Estilos compartidos
 │   │   └── [nombre-pagina].css  # CSS específico por página
 │   ├── img/
+│   │   ├── catalogo/            # Imágenes de catálogo
 │   │   ├── icons/               # Íconos SVG
-│   │   ├── productos/           # Imágenes de catálogo
-│   │   └── sedes/               # Fotos de locales
+│   │   ├── Index/               # Imágenes de inicio
+│   │   ├── manual/              # Imágenes del manual de usuario
+│   │   ├── sedes/               # Fotos de locales
+│   │   └── varios/              # Imágenes extras
 │   └── js/                      # Scripts comunes
 │
 ├── pages/
@@ -83,18 +86,19 @@ Optica-nur-web/
 ---
 
 ## 🎨 Guía de Estilos  
-### Paleta de Colores (Luego Cambiaran)
+### Paleta de Colores
 ```css
 :root {
-  --color-primario: #87CEEB;      /* Azul celeste */
-  --color-secundario: #FFFFFF;    /* Blanco */
-  --color-texto: #333333;         /* Gris oscuro */
-  --color-fondo: #F8F9FA;         /* Gris claro */
+  --color-primario: rgb(0, 185, 216);
+  --color-secundario: #FFFFFF;
+  --color-texto: #333333;
+  --color-fondo: #F8F9FA;
+  --color-bordes: rgb(0, 140, 191);
 }
 ```
 
-### Tipografía (Posibles cambios, aunque la Tipografía es Bonita)
-- **Familia principal**: `Poppins`  
+### Tipografía 
+- **Familia principal**: 'Poppins', 'Times New Roman', Arial;
 - **Tamaños**:  
   ```css
   .titulo-primipal { font-size: 2.5rem; }
@@ -137,24 +141,21 @@ Optica-nur-web/
 ---
 
 ## ✅ Tareas Pendientes  
-- [ ] Implementar menú móvil  
-- [ ] Definir paleta de colores final  
-- [ ] Optimizar imágenes  
-- [ ] Pruebas de accesibilidad  
-- [ ] Imagenes del lugar
-- [ ] Formulario de contacto
-- [ ] Logo de la página
-- [ ] Listas de FAQS 
-- [ ] Lista de productos
+- [✅] Implementar menú móvil  
+- [✅] Definir paleta de colores final  
+- [✅] Optimizar imágenes  
+- [✅] Imagenes del lugar
+- [✅] Formulario de contacto
+- [✅] Logo de la página
+- [✅] Lista de productos
 
 ---
 
 ## 👥 Asignación de Páginas  
 | Página | Responsable | Estado |  
 |--------|------------|--------|  
-| Inicio | Javier Nieto | 🟡 En progreso |  
-| Contacto | Franyel Pacheco & Sebastián Valera | 🟡 En progreso |  
-| Catálogo | Virginia Alvarado | 🟡 En progreso |   
-| FAQs | Santiago Briceño | 🟡 En progreso |  
+| Inicio | Javier Nieto | 🟢 Finalizado |  
+| Contacto | Franyel Pacheco | 🟢 Finalizado |  
+| Catálogo | Sebastián Valera | 🟢 Finalizado |   
 
 > ⚠️ **Importante**: Todos los cambios a `global.css` deben ser aprobados por 2 miembros del equipo.
