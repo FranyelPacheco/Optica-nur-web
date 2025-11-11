@@ -4,7 +4,7 @@
 ---
 
 ## 🌐 Enlace al Sitio  
-*(Incluir aquí el link cuando esté publicado)*  
+https://optica-nur.pages.dev
 
 ---
 
