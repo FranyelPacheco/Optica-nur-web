@@ -153,6 +153,7 @@ body {
   margin: 0 auto;
 }
 
+
 /* FOOTER */
 .footer {
   background-color: var(--color-primario);
@@ -268,7 +269,25 @@ p {
   visibility: visible;
 }
 
+/* =============== ESTILOS ESPECÍFICOS PARA BOTÓN MANUAL =============== */
+.boton_manual_usuario {
+  width: 75%;
+  display: block;
+  margin: auto;
+}
 
+/* Responsive para la imagen del manual */
+@media (max-width: 768px) {
+  .boton_manual_usuario {
+    width: 65%;
+  }
+}
+
+@media (max-width: 480px) {
+  .boton_manual_usuario {
+    width: 60%;
+  }
+}
 
 /* =============== DISEÑO RESPONSIVE  ============== */
 
@@ -492,4 +511,3 @@ p {
     max-width: 1300px;
   }
 }
-

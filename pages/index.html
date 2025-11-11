@@ -81,7 +81,7 @@
           </div>
           <div class="hero-image">
             <div class="image-container">
-              <img src="../assets/img/Index/foto-inicio.jpg" alt="Lentes de alta calidad - Óptica Nur" class="hero-img" class="retoque-imagen">
+              <img src="../assets/img/Index/foto-inicio.webp" alt="Lentes de alta calidad - Óptica Nur" class="hero-img" class="retoque-imagen">
               <div class="image-badge">
                 <span class="badge-text">Calidad Garantizada</span>
               </div>
@@ -101,7 +101,7 @@
         <div class="servicios-grid">
           <article class="servicio-card">
             <div class="servicio-icon">
-              <span class="icon">👓</span>
+              <span class="icon"><img class="imagen-icono" src="../assets/img/icons/lentes.webp" alt="lentes"></span>
             </div>
             <div class="servicio-content">
               <h3>Lentes de Contacto</h3>
@@ -116,7 +116,7 @@
 
           <article class="servicio-card">
             <div class="servicio-icon">
-              <span class="icon">🔬</span>
+              <span class="icon"><img class="imagen-icono" src="../assets/img/icons/montura.webp" alt="lentes"></span>
             </div>
             <div class="servicio-content">
               <h3>Monturas Exclusivas</h3>
@@ -135,7 +135,7 @@
       <section class="why-choose" aria-labelledby="why-choose-title">
         <div class="why-choose-container">
           <div class="why-choose-image">
-            <img src="../assets/img/Index/foto-nosotros.jpg" alt="Profesional de Óptica Nur atendiendo a cliente" class="why-choose-img">
+            <img src="../assets/img/Index/foto-nosotros.webp" alt="Profesional de Óptica Nur atendiendo a cliente" class="why-choose-img">
           </div>
           <div class="why-choose-content">
             <h2 id="why-choose-title">¿Por qué elegir Óptica Nur?</h2>
@@ -189,7 +189,7 @@
             </div>
           </div>
           <div class="cta-image x">
-            <img src="../assets/img/Index/foto-nosotros2.jpg" alt="Cliente satisfecho en Óptica Nur" class="cta-img">
+            <img src="../assets/img/Index/foto-nosotros2.webp" alt="Cliente satisfecho en Óptica Nur" class="cta-img">
           </div>
         </div>
       
@@ -212,8 +212,8 @@
   </footer>
 
   <!-- BOTÓN MANUAL DE USUARIO -->
-  <button class="btn-manual-usuario" onclick="abrirManual()" aria-label="Abrir manual de usuario">
-    <span><img src="../assets/img/icons/manual_de_usuario.png" alt="" class="boton_manual_usuario"></span>
+  <button class="btn-manual-usuario" aria-label="Abrir manual de usuario">
+    <span> <a href="manual-usuario.html" target="_blank"><img src="../assets/img/icons/manual_de_usuario.webp" alt="" class="boton_manual_usuario"></a></span>
     <span class="tooltip">Manual de Usuario</span>
   </button>
 
@@ -221,11 +221,6 @@
   <script>
     // Año dinámico
     document.getElementById('year').textContent = new Date().getFullYear();
-
-    // Función para abrir el manual
-    function abrirManual() {
-      window.open('manual-usuario.html', '_blank', 'width=1000,height=700,scrollbars=yes');
-    }
 
     // Menú hamburguesa mejorado - Solo se activa en móvil
     document.addEventListener("DOMContentLoaded", () => {

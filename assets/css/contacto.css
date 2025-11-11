@@ -151,7 +151,6 @@
 }
 
 
-
 /* Asegurar que la grid ocupe altura completa en desktop */
 @media (min-width: 992px) {
   .ubi-grid { 
@@ -166,6 +165,10 @@
   }
 }
 
+.image-icons {
+  width: 60px;
+  height: 60px;
+}
 
 /* Media queries móviles - ACTUALIZADO */
 @media (max-width: 768px) {
