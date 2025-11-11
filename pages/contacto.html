@@ -1,75 +1,333 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Óptica Nur - Ubicación</title>
-  
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Óptica Nur - Contacto</title>
+
   <!-- CSS GLOBAL -->
-  <link rel="stylesheet" href="../assets/css/global.css">
-  
-  <!-- CSS ESPECÍFICO (cambiar por el nombre de tu página) -->
-  <link rel="stylesheet" href="../assets/css/ubicacion.css">
-  
+  <link rel="stylesheet" href="../assets/css/global.css" />
+
+  <!-- CSS ESPECÍFICO -->
+  <link rel="stylesheet" href="../assets/css/contacto.css" />
+
   <!-- FUENTE POPPINS Y FAVICON -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="icon" href="../assets/img/logo-arriba.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="">
+
+  <!-- SEO / Social -->
+  <meta name="description" content="Encuentra las sedes de Óptica Nur en Barquisimeto: direcciones, horarios, teléfonos, y mapas para llegar fácilmente." />
+  <meta property="og:title" content="Óptica Nur — Ubicación" />
+  <meta property="og:description" content="Encuentra las sedes de Óptica Nur en Barquisimeto: direcciones, horarios, teléfonos, y mapas para llegar fácilmente." />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="es_VE" />
+
 </head>
 
 <body>
+  <!-- Overlay para menú móvil -->
+  <div class="menu-overlay" id="menuOverlay"></div>
+
   <!-- HEADER (COMÚN) -->
-  <header class="header">
+  <header class="header" role="banner">
     <div class="logo-container">
       <a href="index.html"><img src="../assets/img/logo-placeholder.svg" alt="Óptica Nur" class="logo" /></a>
     </div>
-    
-    <!-- MENÚ NAVEGACIÓN (ESCRITORIO) -->
-    <nav class="nav-menu">
+
+    <nav class="nav-menu" aria-label="Navegación principal" id="navMenu">
       <ul>
         <li><a href="index.html">Inicio</a></li>
         <li><a href="catalogo.html">Catálogo</a></li>
-        <li><a href="contacto.html">Contacto</a></li>
-        <li><a href="faqs.html">Preguntas Frecuentes</a></li>
+        <li><a href="contacto.html" class="activo">Contacto</a></li>
       </ul>
     </nav>
-    
-    <!-- MENÚ HAMBURGUESA (MÓVIL - POR IMPLEMENTAR) -->
-    <div class="menu-mobile">
+
+    <button class="menu-mobile" aria-label="Abrir menú" aria-expanded="false" aria-controls="navMenu" id="menuMobile">
       <span class="bar"></span>
       <span class="bar"></span>
       <span class="bar"></span>
-    </div>
+    </button>
   </header>
 
-  <!-- CONTENIDO PRINCIPAL (CADA UNO TRABAJA AQUÍ) -->
-  <main class="main-content">
-    <section class="contenido-pagina">
-      <!-- 
-        *************************************
-        ZONA DE TRABAJO INDIVIDUAL 
-        (Reemplazar esto con tu contenido)
-        *************************************
-      -->
-      <h1 class="titulo-principal">Título de la Página</h1>
-      <p>Contenido específico aquí...</p>
-      
+  <!-- CONTENIDO PRINCIPAL -->
+  <main class="main-content" id="main" role="main">
+    <section class="contenido-pagina" aria-labelledby="main-title">
+      <h1 id="main-title" class="titulo-principal">Nuestras Sedes</h1>
+      <p class="subtitulo">Encuéntranos fácilmente en Barquisimeto</p>
+
+      <!-- Sede: Este -->
+      <article class="seccion seccion-sede sede-este" id="sede-este" aria-labelledby="sede-este-title">
+        <h2 id="sede-este-title" class="titulo-seccion">Sede Este</h2>
+
+        <div class="ubi-grid">
+          <!-- Datos -->
+          <div class="card info-card">
+            <div class="detalle-sede">
+              <div class="icono-sede" aria-hidden="true">
+                <img class="image-icons" src="../assets/img/icons/mapa.webp" alt="mapa">
+              </div>
+              <div>
+                <h3>Dirección</h3>
+                <p>Av. Venezuela con Av. Argimiro Bracamonte, Torre Financiera, Piso 2.</p>
+              </div>
+            </div>
+
+            <div class="detalle-sede">
+              <div class="icono-sede" aria-hidden="true">
+                <img class="image-icons" src="../assets/img/icons/horario.webp" alt="horario-icono">
+              </div>
+              <div>
+                <h3>Horarios</h3>
+                <p>Lunes a Viernes:</p>
+                <p>8:00 AM - 12:00 M</p>
+                <p>1:00 PM - 4:00 PM</p>
+              </div>
+            </div>
+
+            <div class="detalle-sede">
+              <div class="icono-sede" aria-hidden="true"> 
+                <img class="image-icons" src="../assets/img/icons/contacto.webp" alt="telefono-icono">
+              </div>
+              <div>
+                <h3>Teléfono</h3>
+                <p><a href="tel:+584268561256">0426-8561256</a></p>
+              </div>
+            </div>
+
+            <div class="referencias">
+              <h3>Referencias</h3>
+              <p>Al lado de la Torre Bicentenario</p>
+            </div>
+
+            <div class="contacto-acciones">
+              
+              <button class="btn"><a href="https://maps.app.goo.gl/WxXuZ8t4MudQ2b5W6" target="_blank" rel="noopener">Google Maps</a></button>
+              
+              <button class="btn"><a href="https://wa.me/584268561256" target="_blank" rel="noopener">WhatsApp </a></button>
+            </div>
+          </div>
+
+          <!-- Mapa -->
+          <aside class="card card-mapa" aria-label="Mapa de la sede este">
+            <div class="mapa-container">
+              <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3927.123456789012!2d-69.291075!3d10.074063!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTDCsDA0JzI2LjYiTiA2OcKwMTcnMjEuMCJX!5e0!3m2!1ses!2sve!4v1234567890"
+                width="100%" 
+                height="100%"
+                style="border:0;" 
+                allowfullscreen="" 
+                loading="lazy" 
+                referrerpolicy="no-referrer-when-downgrade"
+                title="Ubicación de Óptica Nur Sede Este">
+              </iframe>
+            </div>
+            <p class="mapa-nota">Mapa <strong>Sede Este</strong></p>
+          </aside>
+        </div>
+      </article>
+
+      <!-- Sede: Centro -->
+      <br>
+      <article class="seccion seccion-sede" id="sede-centro" aria-labelledby="sede-centro-title">
+        <h2 id="sede-centro-title" class="titulo-seccion">Sede Centro</h2>
+
+        <div class="ubi-grid">
+          <!-- Datos -->
+          <div class="card info-card">
+            <div class="detalle-sede">
+              <div class="icono-sede" aria-hidden="true"> 
+                <img class="image-icons" src="../assets/img/icons/mapa.webp" alt="mapa">
+              </div>
+              <div>
+                <h3>Dirección</h3>
+                <p>Calle 23 con Carrera 18, Torre Financiera del Centro</p>
+              </div>
+            </div>
+
+            <div class="detalle-sede">
+              <div class="icono-sede" aria-hidden="true">
+                <img class="image-icons" src="../assets/img/icons/horario.webp" alt="horario-icono">
+              </div>
+              <div>
+                <h3>Horarios</h3>
+                <p>Lunes a Viernes:</p>
+                <p>8:00 AM - 12:00 M</p>
+                <p>1:00 PM - 4:00 PM</p>
+              </div>
+            </div>
+
+            <div class="detalle-sede">
+              <div class="icono-sede" aria-hidden="true">
+                <img class="image-icons" src="../assets/img/icons/contacto.webp" alt="telefono-icono">
+              </div>
+              <div>
+                <h3>Teléfono</h3>
+                <p><a href="tel:+584268561256">0426-8561256</a></p>
+              </div>
+            </div>
+
+            <div class="referencias">
+              <h3>Referencias</h3>
+              <p>Frente al estacionamiento del Hotel Príncipe</p>
+            </div>
+
+            <div class="contacto-acciones">
+              <button class="btn"><a href="https://maps.app.goo.gl/9GqaPMRXH6drHZCv8" target="_blank" rel="noopener">Google Maps</a></button>
+              
+              <button class="btn"><a href="https://wa.me/584268561256" target="_blank" rel="noopener">WhatsApp </a></button>
+              
+            </div>
+          </div>
+
+          <!-- Mapa -->
+          <aside class="card card-mapa" aria-label="Mapa de la sede centro">
+            <div class="mapa-container">
+              <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3927.123456789012!2d-69.3139518!3d10.0653367!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e876712830b6c39%3A0x89b43de26cebad3d!2sCentro%20Oftalmol%C3%B3gico%20Antonio%20Nur!5e0!3m2!1ses!2sve!4v1234567891"
+                width="100%" 
+                height="100%"
+                style="border:0;" 
+                allowfullscreen="" 
+                loading="lazy" 
+                referrerpolicy="no-referrer-when-downgrade"
+                title="Ubicación de Óptica Nur Sede Centro">
+              </iframe>
+            </div>
+            <p class="mapa-nota">Mapa <strong>Sede Centro</strong></p>
+          </aside>
+        </div>
+      </article>
+
+      <!-- Sección transporte -->
+      <section class="seccion seccion-transporte" aria-labelledby="transporte-title">
+        <h2 id="transporte-title" class="titulo-seccion">¿Cómo Llegar?</h2>
+
+        <div class="contenedor-transporte">
+          <div class="opcion-transporte">
+            <div class="icono-transporte" aria-hidden="true">
+              <img class="image-icons" src="../assets/img/icons/automovil.webp" alt="automovil-icono">
+            </div>
+            <h3>En automóvil</h3>
+            <hr>
+            <br>
+            <p>La <b>Sede Este</b> cuenta con estacionamiento <strong>privado gratuito</strong> para clientes.</p>
+          </div>
+
+          <div class="opcion-transporte">
+            <div class="icono-transporte" aria-hidden="true">
+              <img class="image-icons" src="../assets/img/icons/bus.webp" alt="bus-icono">
+            </div>
+            <h3>Transporte</h3>
+            <hr>
+            <br>
+            <p><strong>Sede Centro:</strong> Rutas 05 y 06<br><strong>Sede Este:</strong> Ruta A (algunos)</p>
+          </div>
+
+          <div class="opcion-transporte">
+            <div class="icono-transporte" aria-hidden="true">
+              <img class="image-icons" src="../assets/img/icons/bus-stop.webp" alt="bus_stop-icono">
+            </div>
+            <h3>Paradas cercanas</h3>
+            <hr>
+            <br>
+            <p><strong>Sede Centro:</strong> "Hotel Príncipe" (15m)<br><strong>Sede Este:</strong> "Torre Financiera" (50m)</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Galería -->
+      <section class="galeria" aria-labelledby="galeria-title">
+        <h2 id="galeria-title" class="titulo-seccion">Conoce nuestras sedes</h2>
+        <div class="galeria-grid">
+          <img loading="lazy" src="../assets/img/sedes/local-1.webp" alt="Fachada Óptica Nur - Centro">
+          <img loading="lazy" src="../assets/img/sedes/local-2.webp" alt="Interior Óptica Nur - Exhibición">
+          <img loading="lazy" src="../assets/img/sedes/fachada-este.webp" alt="Área de atención al cliente">
+        </div>
+      </section>
     </section>
   </main>
 
   <!-- FOOTER (COMÚN) -->
-  <footer class="footer">
+  <footer class="footer" role="contentinfo">
     <div class="footer-content">
-      <p>© 2025 Óptica Nur - Barquisimeto, Venezuela</p>
+      <p>© <span id="year"></span> Óptica Nur - Barquisimeto, Venezuela</p>
       <div class="social-links">
-        <a href="#" aria-label="Facebook">
-          <img src="../assets/img/icons/facebook.svg" alt="Facebook" class="social-icon">
-        </a>
-        <a href="#" aria-label="Instagram">
-          <img src="../assets/img/icons/instagram.svg" alt="Instagram" class="social-icon">
-        </a>
+        <a href="https://www.facebook.com/opticanurbarquisimeto/?locale=es_LA" aria-label="Facebook"><img src="../assets/img/icons/facebook.svg" alt="" class="social-icon"></a>
+        <a href="https://www.instagram.com/optica.nur/?hl=es" aria-label="Instagram"><img src="../assets/img/icons/instagram.svg" alt="" class="social-icon"></a>
       </div>
     </div>
   </footer>
+
+  <!-- BOTÓN MANUAL DE USUARIO -->
+  <button class="btn-manual-usuario" aria-label="Abrir manual de usuario">
+    <span> <a href="manual-usuario.html" target="_blank"><img src="../assets/img/icons/manual_de_usuario.webp" alt="" class="boton_manual_usuario"></a></span>
+    <span class="tooltip">Manual de Usuario</span>
+  </button>
+
+  <!-- SCRIPTS -->
+  <script>
+    // Año dinámico
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Menú hamburguesa mejorado - Solo se activa en móvil
+    document.addEventListener("DOMContentLoaded", () => {
+      const menuBtn = document.getElementById('menuMobile');
+      const navMenu = document.getElementById('navMenu');
+      const menuOverlay = document.getElementById('menuOverlay');
+      const body = document.body;
+
+      // Verificar si estamos en móvil
+      function isMobile() {
+        return window.innerWidth <= 768;
+      }
+
+      function toggleMenu() {
+        if (!isMobile()) return;
+        
+        const expanded = menuBtn.getAttribute('aria-expanded') === 'true';
+        menuBtn.setAttribute('aria-expanded', String(!expanded));
+        menuBtn.classList.toggle('active');
+        navMenu.classList.toggle('active');
+        menuOverlay.classList.toggle('active');
+        body.style.overflow = expanded ? 'auto' : 'hidden';
+      }
+
+      function closeMenu() {
+        if (!isMobile()) return;
+        
+        menuBtn.setAttribute('aria-expanded', 'false');
+        menuBtn.classList.remove('active');
+        navMenu.classList.remove('active');
+        menuOverlay.classList.remove('active');
+        body.style.overflow = 'auto';
+      }
+
+      // Solo agregar eventos si el elemento existe y estamos en móvil
+      if (menuBtn && navMenu && menuOverlay) {
+        menuBtn.addEventListener('click', toggleMenu);
+        menuOverlay.addEventListener('click', closeMenu);
+
+        // Cerrar menú al hacer clic en un enlace
+        const navLinks = navMenu.querySelectorAll('a');
+        navLinks.forEach(link => {
+          link.addEventListener('click', closeMenu);
+        });
+
+        // Cerrar menú con tecla Escape
+        document.addEventListener('keydown', (e) => {
+          if (e.key === 'Escape' && navMenu.classList.contains('active')) {
+            closeMenu();
+          }
+        });
+
+        // Cerrar menú al redimensionar a escritorio
+        window.addEventListener('resize', () => {
+          if (!isMobile() && navMenu.classList.contains('active')) {
+            closeMenu();
+          }
+        });
+      }
+    });
+  </script>
 </body>
 </html>

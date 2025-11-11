@@ -8,12 +8,19 @@
   <!-- CSS GLOBAL -->
   <link rel="stylesheet" href="../assets/css/global.css">
   
-  <!-- CSS ESPECÍFICO (cambiar por el nombre de tu página) -->
+  <!-- CSS ESPECÍFICO -->
   <link rel="stylesheet" href="../assets/css/home.css">
   
   <!-- FUENTE POPPINS Y FAVICON -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="icon" href="../assets/img/logo-arriba.svg" type="image/svg+xml">
+
+  <!-- SEO / Social -->
+  <meta name="description" content="Óptica Nur - Tu visión es nuestra prioridad. Lentes, monturas y servicios oftalmológicos en Barquisimeto." />
+  <meta property="og:title" content="Óptica Nur — Inicio" />
+  <meta property="og:description" content="Óptica Nur - Tu visión es nuestra prioridad. Lentes, monturas y servicios oftalmológicos en Barquisimeto." />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="es_VE" />
 </head>
 
 <body>
@@ -21,18 +28,17 @@
   <div class="menu-overlay" id="menuOverlay"></div>
 
   <!-- HEADER (COMÚN) -->
-  <header class="header">
+  <header class="header" role="banner">
     <div class="logo-container">
       <a href="index.html"><img src="../assets/img/logo-placeholder.svg" alt="Óptica Nur" class="logo" /></a>
     </div>
     
     <!-- MENÚ NAVEGACIÓN (ESCRITORIO) -->
-    <nav class="nav-menu" id="navMenu">
+    <nav class="nav-menu" aria-label="Navegación principal" id="navMenu">
       <ul>
         <li><a href="index.html" class="activo">Inicio</a></li>
         <li><a href="catalogo.html">Catálogo</a></li>
         <li><a href="contacto.html">Contacto</a></li>
-        <li><a href="faqs.html">Preguntas Frecuentes</a></li>
       </ul>
     </nav>
     
@@ -44,25 +50,156 @@
     </button>
   </header>
 
-  <!-- CONTENIDO PRINCIPAL (CADA UNO TRABAJA AQUÍ) -->
-  <main class="main-content">
-    <section class="contenido-pagina">
-      <!-- 
-        *************************************
-        ZONA DE TRABAJO INDIVIDUAL 
-        (Reemplazar esto con tu contenido)
-        *************************************
-      -->
-      <h1 class="titulo-principal">Título de la Página</h1>
-      <p>Contenido específico aquí...</p>
+  <!-- CONTENIDO PRINCIPAL -->
+  <main class="main-content" id="main" role="main">
+    <section class="contenido-pagina" aria-labelledby="main-title">
       
-    </section>
+      <!-- HERO SECTION -->
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-container">
+          <div class="hero-content">
+            <h1 id="hero-title">Tu visión, <span class="highlight">nuestra prioridad</span></h1>
+            <p class="hero-description">En Óptica Nur cuidamos de tus ojos con la más alta tecnología y el mejor servicio personalizado en Barquisimeto.</p>
+            <div class="hero-stats">
+              <div class="stat">
+                <span class="stat-number">25+</span>
+                <span class="stat-label">Años de experiencia</span>
+              </div>
+              <div class="stat">
+                <span class="stat-number">5,000+</span>
+                <span class="stat-label">Clientes satisfechos</span>
+              </div>
+              <div class="stat">
+                <span class="stat-number">2</span>
+                <span class="stat-label">Sedes en Barquisimeto</span>
+              </div>
+            </div>
+            <div class="hero-buttons">
+              <a href="catalogo.html" class="btn btn-primary">Ver Catálogo</a>
+              <a href="contacto.html" class="btn btn-secondary">Agendar Cita</a>
+            </div>
+          </div>
+          <div class="hero-image">
+            <div class="image-container">
+              <img src="../assets/img/Index/foto-inicio.webp" alt="Lentes de alta calidad - Óptica Nur" class="hero-img" class="retoque-imagen">
+              <div class="image-badge">
+                <span class="badge-text">Calidad Garantizada</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+            <!-- SERVICIOS DESTACADOS -->
+      <section class="servicios-destacados" aria-labelledby="servicios-title">
+        <div class="section-header">
+          <h2 id="servicios-title">Nuestros Servicios Especializados</h2>
+          <p>Ofrecemos soluciones completas para el cuidado de tu visión</p>
+        </div>
+        
+        <!-- CONTENEDOR GRID QUE FALTABA -->
+        <div class="servicios-grid">
+          <article class="servicio-card">
+            <div class="servicio-icon">
+              <span class="icon"><img class="imagen-icono" src="../assets/img/icons/lentes.webp" alt="lentes"></span>
+            </div>
+            <div class="servicio-content">
+              <h3>Lentes de Contacto</h3>
+              <p>Amplia variedad de lentes de contacto para todas las necesidades y estilos de vida.</p>
+              <ul class="servicio-features">
+                <li>Lentes tóricos</li>
+                <li>Multifocales</li>
+                <li>De uso prolongado</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="servicio-card">
+            <div class="servicio-icon">
+              <span class="icon"><img class="imagen-icono" src="../assets/img/icons/montura.webp" alt="lentes"></span>
+            </div>
+            <div class="servicio-content">
+              <h3>Monturas Exclusivas</h3>
+              <p>Diseños únicos y modernos que se adaptan a tu personalidad y necesidades.</p>
+              <ul class="servicio-features">
+                <li>Marcas internacionales</li>
+                <li>Diseños venezolanos</li>
+                <li>Ajuste personalizado</li>
+              </ul>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- POR QUÉ ELEGIRNOS -->
+      <section class="why-choose" aria-labelledby="why-choose-title">
+        <div class="why-choose-container">
+          <div class="why-choose-image">
+            <img src="../assets/img/Index/foto-nosotros.webp" alt="Profesional de Óptica Nur atendiendo a cliente" class="why-choose-img">
+          </div>
+          <div class="why-choose-content">
+            <h2 id="why-choose-title">¿Por qué elegir Óptica Nur?</h2>
+            <div class="reasons-list">
+              <div class="reason-item">
+                <div class="reason-icon">✓</div>
+                <div class="reason-content">
+                  <h4>Experiencia Comprobada</h4>
+                  <p>Más de 25 años sirviendo a la comunidad barquisimetana con excelencia y dedicación.</p>
+                </div>
+              </div>
+              <div class="reason-item">
+                <div class="reason-icon">✓</div>
+                <div class="reason-content">
+                  <h4>Tecnología Avanzada</h4>
+                  <p>Equipos de diagnóstico de última generación para resultados precisos y confiables.</p>
+                </div>
+              </div>
+              <div class="reason-item">
+                <div class="reason-icon">✓</div>
+                <div class="reason-content">
+                  <h4>Atención Personalizada</h4>
+                  <p>Cada cliente recibe atención individualizada y recomendaciones basadas en sus necesidades específicas.</p>
+                </div>
+              </div>
+              <div class="reason-item">
+                <div class="reason-icon">✓</div>
+                <div class="reason-content">
+                  <h4>Garantía de Calidad</h4>
+                  <p>Todos nuestros productos cuentan con garantía y servicio post-venta.</p>
+                </div>
+              </div>
+            </div>
+            <a href="contacto.html" class="btn btn-primary">Visítanos Hoy</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- TESTIMONIOS -->
+      
+
+      <!-- CTA FINAL -->
+      <section class="cta-final" aria-labelledby="cta-title">
+        <div class="cta-container">
+          <div class="cta-content">
+            <h2 id="cta-title">¿Listo para mejorar tu visión?</h2>
+            <p>Agenda tu cita hoy mismo y descubre por qué somos la óptica de confianza en Barquisimeto</p>
+            <div class="cta-buttons">
+              <a href="contacto.html" class="btn btn-primary large">Agendar Cita</a>
+              
+            </div>
+          </div>
+          <div class="cta-image x">
+            <img src="../assets/img/Index/foto-nosotros2.webp" alt="Cliente satisfecho en Óptica Nur" class="cta-img">
+          </div>
+        </div>
+      
+  
   </main>
 
   <!-- FOOTER (COMÚN) -->
-  <footer class="footer">
+  <footer class="footer" role="contentinfo">
     <div class="footer-content">
-      <p>© <span id="year">2025</span> Óptica Nur - Barquisimeto, Venezuela</p>
+      <p>© <span id="year"></span> Óptica Nur - Barquisimeto, Venezuela</p>
       <div class="social-links">
         <a href="https://www.facebook.com/opticanurbarquisimeto/?locale=es_LA" aria-label="Facebook">
           <img src="../assets/img/icons/facebook.svg" alt="Facebook" class="social-icon">
@@ -74,70 +211,76 @@
     </div>
   </footer>
 
-  <!-- SCRIPT -->
+  <!-- BOTÓN MANUAL DE USUARIO -->
+  <button class="btn-manual-usuario" aria-label="Abrir manual de usuario">
+    <span> <a href="manual-usuario.html" target="_blank"><img src="../assets/img/icons/manual_de_usuario.webp" alt="" class="boton_manual_usuario"></a></span>
+    <span class="tooltip">Manual de Usuario</span>
+  </button>
+
+  <!-- SCRIPTS -->
   <script>
-  // Año dinámico
-  document.getElementById('year').textContent = new Date().getFullYear();
+    // Año dinámico
+    document.getElementById('year').textContent = new Date().getFullYear();
 
-  // Menú hamburguesa mejorado - Solo se activa en móvil
-  document.addEventListener("DOMContentLoaded", () => {
-    const menuBtn = document.getElementById('menuMobile');
-    const navMenu = document.getElementById('navMenu');
-    const menuOverlay = document.getElementById('menuOverlay');
-    const body = document.body;
+    // Menú hamburguesa mejorado - Solo se activa en móvil
+    document.addEventListener("DOMContentLoaded", () => {
+      const menuBtn = document.getElementById('menuMobile');
+      const navMenu = document.getElementById('navMenu');
+      const menuOverlay = document.getElementById('menuOverlay');
+      const body = document.body;
 
-    // Verificar si estamos en móvil
-    function isMobile() {
-      return window.innerWidth <= 768;
-    }
+      // Verificar si estamos en móvil
+      function isMobile() {
+        return window.innerWidth <= 768;
+      }
 
-    function toggleMenu() {
-      if (!isMobile()) return;
-      
-      const expanded = menuBtn.getAttribute('aria-expanded') === 'true';
-      menuBtn.setAttribute('aria-expanded', String(!expanded));
-      menuBtn.classList.toggle('active');
-      navMenu.classList.toggle('active');
-      menuOverlay.classList.toggle('active');
-      body.style.overflow = expanded ? 'auto' : 'hidden';
-    }
+      function toggleMenu() {
+        if (!isMobile()) return;
+        
+        const expanded = menuBtn.getAttribute('aria-expanded') === 'true';
+        menuBtn.setAttribute('aria-expanded', String(!expanded));
+        menuBtn.classList.toggle('active');
+        navMenu.classList.toggle('active');
+        menuOverlay.classList.toggle('active');
+        body.style.overflow = expanded ? 'auto' : 'hidden';
+      }
 
-    function closeMenu() {
-      if (!isMobile()) return;
-      
-      menuBtn.setAttribute('aria-expanded', 'false');
-      menuBtn.classList.remove('active');
-      navMenu.classList.remove('active');
-      menuOverlay.classList.remove('active');
-      body.style.overflow = 'auto';
-    }
+      function closeMenu() {
+        if (!isMobile()) return;
+        
+        menuBtn.setAttribute('aria-expanded', 'false');
+        menuBtn.classList.remove('active');
+        navMenu.classList.remove('active');
+        menuOverlay.classList.remove('active');
+        body.style.overflow = 'auto';
+      }
 
-    // Solo agregar eventos si el elemento existe y estamos en móvil
-    if (menuBtn && navMenu && menuOverlay) {
-      menuBtn.addEventListener('click', toggleMenu);
-      menuOverlay.addEventListener('click', closeMenu);
+      // Solo agregar eventos si el elemento existe y estamos en móvil
+      if (menuBtn && navMenu && menuOverlay) {
+        menuBtn.addEventListener('click', toggleMenu);
+        menuOverlay.addEventListener('click', closeMenu);
 
-      // Cerrar menú al hacer clic en un enlace
-      const navLinks = navMenu.querySelectorAll('a');
-      navLinks.forEach(link => {
-        link.addEventListener('click', closeMenu);
-      });
+        // Cerrar menú al hacer clic en un enlace
+        const navLinks = navMenu.querySelectorAll('a');
+        navLinks.forEach(link => {
+          link.addEventListener('click', closeMenu);
+        });
 
-      // Cerrar menú con tecla Escape
-      document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape' && navMenu.classList.contains('active')) {
-          closeMenu();
-        }
-      });
+        // Cerrar menú con tecla Escape
+        document.addEventListener('keydown', (e) => {
+          if (e.key === 'Escape' && navMenu.classList.contains('active')) {
+            closeMenu();
+          }
+        });
 
-      // Cerrar menú al redimensionar a escritorio
-      window.addEventListener('resize', () => {
-        if (!isMobile() && navMenu.classList.contains('active')) {
-          closeMenu();
-        }
-      });
-    }
-  });
-</script>
+        // Cerrar menú al redimensionar a escritorio
+        window.addEventListener('resize', () => {
+          if (!isMobile() && navMenu.classList.contains('active')) {
+            closeMenu();
+          }
+        });
+      }
+    });
+  </script>
 </body>
 </html>
